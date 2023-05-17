@@ -13,13 +13,15 @@ Pode ser usado:
 - O sistema deverá ser capaz de gerar relatórios (inclusive no próprio terminal) 
 
 
--[] Banco de Dados SQL com 3 tabelas:
+-[] Banco de Dados SQL com 4 tabelas: (Relacional)
     - [] Livros (contendo informações sobre 'codigoLivro'; 'nome'; 'autor'; 'categoria')
     - [] Usuário (contendo informações sobre 'nomeUsuario'; 'RA')
     - [] Historico/Emprestimo (contendo informações histórico de reserva/exclusão/disponível
         sobre 'codigoLivro'; 'nome'; 'autor'; 'status'; 'nomeUsuario')
+    - [] Categorias (contendo informação das categorias disponíveis)
 
 - Para cada entidade uma classe.
+- Uma classe para a conexão do BD Mysql
 - O sistema não terá interface gráfica, será programado para ter uma interface no terminal, utilizando a main. 
   - Funções
 - Criar pesquisa por nome e categoria (resposta com informações dos livros) - pesquisar como mostrar a lista de livros 
@@ -28,3 +30,4 @@ Pode ser usado:
 - Delete: "excluir livro danificado"
 - ID precisa ter livros duplicados.
 - Método emprestar e devoler - todos o CRUD terá um método. 
+- Criar uma conexão com MySQL 
