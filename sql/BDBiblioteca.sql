@@ -14,9 +14,9 @@ CREATE TABLE usuario (
 nome_usuario TEXT,
 ra_usuario INT
 );
--- criar tabela livros
+-- criar tabela categorias
 CREATE TABLE categorias (
-cod_categoria INT NOT NULL PRIMARY KEY,
+cod_categoria INT AUTO_INCREMENT PRIMARY KEY,
 nome_categoria TEXT
 );
 -- criar tabela historico

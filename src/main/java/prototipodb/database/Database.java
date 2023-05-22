@@ -1,4 +1,4 @@
-package prototipodb;
+package prototipodb.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,14 +14,12 @@ public class Database {
         - throw é jogar
         - "try/catch - tentar/pegar"
         - o throw define na assinatura do método que ele estourar? (dar erro, jogar uma exceção)
+
+        serverName = caminho do servidor do BD
+        databaseName = nome do seu banco de dados
+        username = nome de um usuário de seu BD
+        password = sua senha de acesso
         */
-
-        // Configurando a nossa conexão com um banco de dados
-
-        // String serverName = "localhost"; //caminho do servidor do BD
-        // String databaseName ="BIBLIOTECA"; //nome do seu banco de dados
-        // String username = "root"; //nome de um usuário de seu BD
-        // String password = "rootroot"; //sua senha de acesso
         String url =  "jdbc:mysql://" + serverName + "/" + databaseName;
         this.connection = DriverManager.getConnection(url, username, password);
     }

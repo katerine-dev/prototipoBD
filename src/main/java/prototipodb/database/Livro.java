@@ -1,11 +1,11 @@
-package prototipoBD;
+package prototipodb.database;
 
 /*
 Atributos:
 - Nome (String)
 - Autor (String)
 - código Livros (Chave estrangeira - int)
-- Categoria (Chave estgrangeira da tabela categorias - int)
+- Categoria (Chave estrangeira da tabela categorias - int)
 
 Métodos:
 - Criar (CREATE)
@@ -14,5 +14,6 @@ Métodos:
 - Ler e imprimir (READ)
  */
 
-public class Livros {
+public class Livro {
+
 }

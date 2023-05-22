@@ -1,4 +1,4 @@
-package prototipoBD;
+package prototipodb.database;
 /*
 Atributos:
 - Codigo Livros (Chave estrangeira da tabela livros)
@@ -14,5 +14,5 @@ Métodos:
 - Ler e imprimir (READ)
  */
 
-public class HistoricoLivros {
+public class HistoricoLivro {
 }

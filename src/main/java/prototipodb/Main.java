@@ -1,5 +1,7 @@
 package prototipodb;
-import java.sql.Connection;
+
+import prototipodb.database.CategoriaDb;
+import prototipodb.database.Database;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -10,9 +12,14 @@ public class Main {
 
         Database database = new Database(serverName, databaseName, password, username);
 
-        Connection c = database.getConnection();
-        System.out.println(c);
+        // interações com a tabela categorias:
+        CategoriaDb categoriaDb = new CategoriaDb(database);
 
+        //TESTES DE INTERAÇÃO COM BANCO DE DADOS:
+        // Criar categoria:
+        categoriaDb.criarCategoria("Terror");
+        // Alterar categoria:
+        categoriaDb.alterarCategoria("Infantil", 1);
     }
 }
 
