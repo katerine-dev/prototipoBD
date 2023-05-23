@@ -13,6 +13,4 @@ public class Usuario {
         this.nome = nome;
         this.RA = RA;
     }
-
-
 }
