@@ -1,5 +1,9 @@
 package prototipodb.model;
-
+/*
+Atributos:
+- Nome
+- Código
+ */
 
 public class Categoria {
     public int codigo;
