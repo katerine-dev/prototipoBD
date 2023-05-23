@@ -8,7 +8,7 @@ Atributos:
 - Nome Usuário
 */
 
-public class HistoricoLivro {
+public class Emprestimo {
     public Livro codigo;
     public Livro nome;
     public Livro autor;
@@ -16,11 +16,11 @@ public class HistoricoLivro {
     public Usuario nomeUsuario;
 
     // Método construtor:
-    public HistoricoLivro(Livro codigo,
-                          Livro nome,
-                          Livro autor,
-                          String status,
-                          Usuario nomeUsuario){
+    public Emprestimo(Livro codigo,
+                      Livro nome,
+                      Livro autor,
+                      String status,
+                      Usuario nomeUsuario){
         this.codigo = codigo;
         this.nome = nome;
         this.autor = autor;

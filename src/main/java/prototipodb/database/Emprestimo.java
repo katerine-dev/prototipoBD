@@ -14,5 +14,5 @@ Métodos:
 - Ler e imprimir (READ)
  */
 
-public class HistoricoLivro {
+public class Emprestimo {
 }

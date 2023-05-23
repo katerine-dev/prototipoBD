@@ -21,7 +21,7 @@ public class CategoriaDb {
     }
 
     public void criarCategoria(String novaCategoria) throws Exception {
-        String sql = "INSERT INTO categorias (nome_categoria) VALUES (?)";
+        String sql = "INSERT INTO categoria (nome_categoria) VALUES (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
 
         // Definir os valores dos parâmetros
@@ -34,7 +34,7 @@ public class CategoriaDb {
 
     }
     public void alterarCategoria(String novaCategoria, int codigo) throws Exception {
-        String sql = "UPDATE categorias SET nome_categoria = (?) WHERE cod_categoria = (?)";
+        String sql = "UPDATE categoria SET nome_categoria = (?) WHERE cod_categoria = (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
 
         // Definir os valores dos parâmetros
@@ -43,6 +43,7 @@ public class CategoriaDb {
 
         // Executar a instrução SQL da variável `instrucao`
         instrucao.executeUpdate();
+
 
         System.out.println("Categoria alterada!");
     }
