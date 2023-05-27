@@ -62,4 +62,7 @@ public class LivroDb {
 
         System.out.println("Livro Criado!");
     }
+
+    // Criar alterar livro
+    // Criar Deletar livro
 }

@@ -2,6 +2,7 @@ package prototipodb.database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.*;
 
 /*
 Atributos:
@@ -11,11 +12,12 @@ Atributos:
 Métodos:
 - Inserir (INSERT) - ok
 - Alterar (UPDATE) - ok
-- Imprimir (READ)
+- Imprimir (SELECT) - ok
  */
 public class CategoriaDb {
     private Database database;
 
+    // Método construtor:
     public CategoriaDb(Database database){
         this.database = database;
     }
@@ -48,5 +50,30 @@ public class CategoriaDb {
         System.out.println("Categoria alterada!");
     }
 
+    public void mostrarCategorias(String nomeTabela) throws Exception {
+        String sql = "SELECT * FROM " + nomeTabela;
+        PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+
+        // Executar a instrução SQL da variável `instrucao`
+        ResultSet resultados = instrucao.executeQuery(sql);
+
+        String[] cabecalho = {"Código categoria", "Nome"};
+
+        // Imprimindo cabeçalho da tabela
+        for (int i = 0; i < cabecalho.length; i++) {
+            System.out.print(cabecalho[i] + "\t"); // caractere de tabulação
+        }
+        System.out.println();
+
+        // Imprimindo linhas da tabela
+        while (resultados.next()) {
+            for (int i = 0; i < cabecalho.length; i++) {
+                System.out.print(resultados.getString(i + 1) + "\t"); // Esse + 1 é para ajustar o indice, pois o
+                // jdbc o indice começa em 1 e o vetor começa em 0
+            }
+            System.out.println();
+        }
+
+    }
 
 }

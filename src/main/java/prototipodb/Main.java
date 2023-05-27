@@ -21,10 +21,12 @@ public class Main {
         // categoriaDb.criarCategoria("Terror");
         // Alterar categoria:
         // categoriaDb.alterarCategoria("Infantil", 1);
+        // Mostrar categoria:
+        // categoriaDb.mostrarCategorias("categoria");
 
         // interações com a tabela livros e livros categorias:
-        LivroDb livroDb = new LivroDb(database);
-        livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
+        // LivroDb livroDb = new LivroDb(database);
+        // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
 
 
     }

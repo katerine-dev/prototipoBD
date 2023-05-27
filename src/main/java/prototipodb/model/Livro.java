@@ -1,22 +1,22 @@
 package prototipodb.model;
 /*
 Atributos:
-- Nome
+- Titulo
 - Autor
 - código Livros
 - Categoria
 */
 public class Livro {
     public int codigo;
-    public String nome;
+    public String titulo;
     public String autor;
     public Categoria categoria;
 
     // Método construtor:
 
-    public Livro(int codigo, String nome, String autor, Categoria categoria){
+    public Livro(int codigo, String titulo, String autor, Categoria categoria){
         this.codigo = codigo;
-        this.nome = nome;
+        this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
     }
