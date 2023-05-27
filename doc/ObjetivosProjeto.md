@@ -1,7 +1,8 @@
 # Create Read Update e Delete
 
 
-CRUD é acrônimo para Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir). Essas são as quatro funções básicas de um sistema que trabalha com um banco de dados. Essas operações são usadas para manipular em um banco de dados, permitindo que os usuários criem, leiam, atualizem e excluam registros.
+CRUD é acrônimo para Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir). Essas são as quatro funções básicas de um sistema que trabalha com um banco de dados.
+Essas operações são usadas para manipular em um banco de dados, permitindo que os usuários criem, leiam, atualizem e excluam registros.
 
 A3 - Criação de um sistema CRUD em Java.
 

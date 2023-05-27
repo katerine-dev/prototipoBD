@@ -1,5 +1,7 @@
 package prototipodb.database;
 
+import prototipodb.model.Categoria;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
@@ -50,30 +52,29 @@ public class CategoriaDb {
         System.out.println("Categoria alterada!");
     }
 
-    public void mostrarCategorias(String nomeTabela) throws Exception {
-        String sql = "SELECT * FROM " + nomeTabela;
+    public Categoria[] lerCategorias() throws Exception {
+        int maximoNumeroDeResultados = 100; // Preciso definir o tamanho do vetor
+        String sql = "SELECT * FROM categoria LIMIT " +  maximoNumeroDeResultados;
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
 
         // Executar a instrução SQL da variável `instrucao`
         ResultSet resultados = instrucao.executeQuery(sql);
+        Categoria[] categorias = new Categoria[maximoNumeroDeResultados];
 
-        String[] cabecalho = {"Código categoria", "Nome"};
-
-        // Imprimindo cabeçalho da tabela
-        for (int i = 0; i < cabecalho.length; i++) {
-            System.out.print(cabecalho[i] + "\t"); // caractere de tabulação
-        }
-        System.out.println();
-
-        // Imprimindo linhas da tabela
-        while (resultados.next()) {
-            for (int i = 0; i < cabecalho.length; i++) {
-                System.out.print(resultados.getString(i + 1) + "\t"); // Esse + 1 é para ajustar o indice, pois o
-                // jdbc o indice começa em 1 e o vetor começa em 0
-            }
-            System.out.println();
+        int i = 0;
+        while (resultados.next()) { // iterar (passar por todos os elementos) o resultado vindo do banco
+            // getInt/getString pega a posição da informação na linha retornada por exemplo:
+            // [1, "acao"]
+            // [2, "terror"]
+            // [3, "comedia"]
+            int codigoCategoria = resultados.getInt(1);
+            String nomeCategoria = resultados.getString(2);
+            Categoria categoria = new Categoria(codigoCategoria, nomeCategoria);
+            categorias[i] = categoria;
+            i = i + 1;
         }
 
+        return categorias;
     }
 
 }
