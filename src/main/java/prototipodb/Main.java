@@ -5,6 +5,8 @@ import prototipodb.database.Database;
 import prototipodb.database.LivroDb;
 import prototipodb.model.Categoria;
 import prototipodb.view.CategoriaView;
+import prototipodb.model.Livro;
+import prototipodb.view.LivroView;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -36,6 +38,7 @@ public class Main {
 
         // LIVROS E LIVROS CATEGORIAS: ______________________
         LivroDb livroDb = new LivroDb(database);
+        LivroView livroView = new LivroView();
 
         // - Criar livro:
         // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
@@ -47,6 +50,12 @@ public class Main {
 
         // Deletar livros:
         // livroDb.deletarLivro(6);
+
+        // - Ler Livros:
+         Livro[] livros = livroDb.lerLivros();
+
+        // - Imprime categorias:
+        livroView.mostrarLivros(livros);
 
     }
 }

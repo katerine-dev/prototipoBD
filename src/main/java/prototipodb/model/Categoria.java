@@ -6,8 +6,8 @@ Atributos:
  */
 
 public class Categoria {
-    public int codigo;
-    public String nome;
+    private int codigo;
+    private String nome;
 
     // Método construtor:
     public Categoria(int codigo, String nome){

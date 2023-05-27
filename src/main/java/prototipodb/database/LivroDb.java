@@ -19,6 +19,7 @@ Métodos:
  */
 
 import prototipodb.model.Categoria;
+import prototipodb.model.Livro;
 
 public class LivroDb {
     private Database database;
@@ -29,14 +30,14 @@ public class LivroDb {
 
     // int[] codigosCategoria vetor para passar várias categorias
 
-    public void criarLivro(String nome, String autor, int[] codigosCategoria) throws Exception {
+    public void criarLivro(String titulo, String autor, int[] codigosCategoria) throws Exception {
         // primeiro INSERT na tabela Livro - preciso fazer o INSERT retornar o ID.
         String sqlLivros = "INSERT INTO livros (nome_livro, autor_livro) VALUES (?, ?)";
         // O prepareStatement quero que você me retorne as chaves que você gerar: (Vai ajudar criar o livroCategoria)
         PreparedStatement instrucaoLivros = this.database.getConnection().prepareStatement(sqlLivros, Statement.RETURN_GENERATED_KEYS);
 
         // Definir os valores dos parâmetros
-        instrucaoLivros.setString(1, nome);
+        instrucaoLivros.setString(1, titulo);
         instrucaoLivros.setString(2, autor);
 
         instrucaoLivros.executeUpdate();
@@ -88,6 +89,35 @@ public class LivroDb {
 
         System.out.println("Livro removido!");
 
+    }
+    public Livro[] lerLivros() throws Exception {
+        int maximoNumeroDeResultados = 100;
+        String sql = "SELECT lc.cod_livro, l.nome_livro, l.autor_livro, lc.cod_categoria, c.nome_categoria " +
+                "FROM livrosCategoria lc " +
+                "JOIN livros l ON lc.cod_livro = l.cod_livro " +
+                "JOIN categoria c ON lc.cod_categoria = c.cod_categoria " +
+                "LIMIT " +  maximoNumeroDeResultados;
+        PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+
+        // Executar a instrução SQL da variável `instrucao`
+        ResultSet resultados = instrucao.executeQuery(sql);
+        Livro[] livros = new Livro[maximoNumeroDeResultados];
+
+        int i = 0;
+        while (resultados.next()) {
+            int codigoLivro = resultados.getInt(1);
+            String titulo = resultados.getString(2);
+            String nomeAutor = resultados.getString(3);
+            int codigoCategoria = resultados.getInt(4);
+            String nomeCategoria = resultados.getString(5);
+
+            Categoria categoria = new Categoria(codigoCategoria, nomeCategoria);
+            Livro livro = new Livro(codigoLivro, titulo, nomeAutor, categoria);
+            livros[i] = livro;
+            i = i + 1;
+        }
+
+        return livros;
     }
     // Criar alterar livro
 }

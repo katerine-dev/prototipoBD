@@ -7,10 +7,10 @@ Atributos:
 - Categoria
 */
 public class Livro {
-    public int codigo;
-    public String titulo;
-    public String autor;
-    public Categoria categoria;
+    private int codigo;
+    private String titulo;
+    private String autor;
+    private Categoria categoria;
 
     // Método construtor:
 
