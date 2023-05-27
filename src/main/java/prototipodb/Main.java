@@ -49,13 +49,16 @@ public class Main {
         // livroDb.criarLivro("Anna Kariênina", "Liev Tolstói", new int[] {1,2});
 
         // Deletar livros:
-        // livroDb.deletarLivro(6);
+        // livroDb.deletarLivro(5);
+
+        // - Alterar categoria:
+        // livroDb.alterarLivro(5, "coisinha", "coisinha");
 
         // - Ler Livros:
-         Livro[] livros = livroDb.lerLivros();
+        // Livro[] livros = livroDb.lerLivros();
 
         // - Imprime categorias:
-        livroView.mostrarLivros(livros);
+        // livroView.mostrarLivros(livros);
 
     }
 }

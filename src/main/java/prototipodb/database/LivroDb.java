@@ -13,9 +13,9 @@ Atributos:
 
 Métodos:
 - Criar (CREATE) - ok
-- Alterar (UPDATE)
+- Alterar (UPDATE) - ok
 - Apagar (DELETE - excluir livro danificado) - ok
-- Imprimir (SELECT)
+- Imprimir (SELECT) - ok
  */
 
 import prototipodb.model.Categoria;
@@ -119,5 +119,18 @@ public class LivroDb {
 
         return livros;
     }
-    // Criar alterar livro
+    public void alterarLivro(int codigoLivro, String novoTitulo, String novoAutor) throws Exception {
+        String sql = "UPDATE livros SET nome_livro = ?, autor_livro = ? WHERE cod_livro = ?";
+        PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+
+        // Definir os valores dos parâmetros
+        instrucao.setInt(3, codigoLivro);
+        instrucao.setString(1, novoTitulo);
+        instrucao.setString(2, novoAutor);
+
+        // Executar a instrução SQL da variável `instrucao`
+        instrucao.executeUpdate();
+
+        System.out.println("Livro alterado!");
+    }
 }

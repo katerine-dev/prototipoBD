@@ -22,4 +22,4 @@ UPDATE categoria SET nome_categoria = 'Suspense'
  WHERE cod_categoria = 1;
 
 -- Visualizar
-SELECT * FROM categoria;
+SELECT * FROM categorias;
