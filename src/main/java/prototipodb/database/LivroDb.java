@@ -12,10 +12,10 @@ Atributos:
 - Categoria (Chave estrangeira da tabela categorias - int)
 
 Métodos:
-- Criar (CREATE)
+- Criar (CREATE) - ok
 - Alterar (UPDATE)
-- Apagar (DELETE - excluir livro danificado)
-- Ler e imprimir (READ)
+- Apagar (DELETE - excluir livro danificado) - ok
+- Imprimir (SELECT)
  */
 
 import prototipodb.model.Categoria;
@@ -63,6 +63,31 @@ public class LivroDb {
         System.out.println("Livro Criado!");
     }
 
+    public void deletarLivro(int codigoLivro) throws Exception {
+        // Primeiro precisa excluir da tabela LIVROSCATEGORIA:
+        String sqlLivrosCategoria = "DELETE FROM livrosCategoria WHERE cod_livro = (?)";
+        PreparedStatement instrucaoLivrosCategoria = this.database.getConnection().prepareStatement(sqlLivrosCategoria);
+
+        // Definir os valores dos parâmetros
+        instrucaoLivrosCategoria.setInt(1, codigoLivro);
+
+        // Executar a instrução SQL da variável `instrucao`
+        instrucaoLivrosCategoria.executeUpdate();
+
+        // Para excluir em LIVROS:
+
+        String sqlLivros = "DELETE FROM livros WHERE cod_livro = (?)";
+        PreparedStatement instrucaoLivros = this.database.getConnection().prepareStatement(sqlLivros);
+
+        // Definir os valores dos parâmetros
+        instrucaoLivros.setInt(1, codigoLivro);
+
+        // Executar a instrução SQL da variável `instrucao`
+        instrucaoLivros.executeUpdate();
+
+
+        System.out.println("Livro removido!");
+
+    }
     // Criar alterar livro
-    // Criar Deletar livro
 }

@@ -20,19 +20,33 @@ public class Main {
         CategoriaView categoriaView = new CategoriaView();
 
         //TESTES DE INTERAÇÃO COM BANCO DE DADOS:
-        // Criar categoria:
+        // CATEGORIA: ____________________________________
+
+        // - Criar categoria:
         // categoriaDb.criarCategoria("Terror");
-        // Alterar categoria:
+
+        // - Alterar categoria:
         // categoriaDb.alterarCategoria("Infantil", 1);
 
-        // Ler categorias:
-        Categoria[] categorias = categoriaDb.lerCategorias();
-        // Imprime categorias:
-        categoriaView.mostrarCategorias(categorias);
+        // - Ler categorias:
+        // Categoria[] categorias = categoriaDb.lerCategorias();
 
-        // interações com a tabela livros e livros categorias:
-        // LivroDb livroDb = new LivroDb(database);
+        // - Imprime categorias:
+        // categoriaView.mostrarCategorias(categorias);
+
+        // LIVROS E LIVROS CATEGORIAS: ______________________
+        LivroDb livroDb = new LivroDb(database);
+
+        // - Criar livro:
         // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
+        // livroDb.criarLivro("1984", "George Orwell", new int[] {1});
+        // livroDb.criarLivro("Crime e Castigo", "Fiódor Dostoiévski", new int[] {1,4});
+        // livroDb.criarLivro("Hamlet", "William Shakespeare", new int[] {5});
+        // livroDb.criarLivro("Cem Anos de Solidão", "Gabriel Márquez", new int[] {1,6});
+        // livroDb.criarLivro("Anna Kariênina", "Liev Tolstói", new int[] {1,2});
+
+        // Deletar livros:
+        // livroDb.deletarLivro(6);
 
     }
 }
