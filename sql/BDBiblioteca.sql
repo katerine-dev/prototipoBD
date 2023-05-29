@@ -44,3 +44,5 @@ autor_livro VARCHAR(30),
 status_livro VARCHAR(30),
 nome_usuario VARCHAR(30)
 );
+
+-- teste
