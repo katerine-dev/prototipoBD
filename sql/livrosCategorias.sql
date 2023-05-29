@@ -1,5 +1,9 @@
 -- Tabela Livros e livrosCategoria
 
+-- para visualizar tabela livros
+
+SELECT * FROM livros;
+
 -- Para visualizar livroCategoria
 SELECT lc.cod_livro, l.nome_livro, l.autor_livro, lc.cod_categoria, c.nome_categoria
 FROM livrosCategoria lc 
