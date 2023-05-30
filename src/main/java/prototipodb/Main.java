@@ -1,8 +1,6 @@
 package prototipodb;
 
-import prototipodb.database.CategoriaDb;
-import prototipodb.database.Database;
-import prototipodb.database.LivroDb;
+import prototipodb.database.*;
 import prototipodb.model.Categoria;
 import prototipodb.view.CategoriaView;
 import prototipodb.model.Livro;
@@ -19,22 +17,15 @@ public class Main {
 
         // IGNORA A PARTE DE BAIXO
         //TESTES DE INTERAÇÃO COM BANCO DE DADOS:
-
-        // interações com a tabela categorias:
+        // CATEGORIA: ____________________________________
         CategoriaDb categoriaDb = new CategoriaDb(database);
         CategoriaView categoriaView = new CategoriaView();
-
-        // CATEGORIA: ____________________________________
-
         // - Criar categoria:
         // categoriaDb.criarCategoria("Terror");
-
         // - Alterar categoria:
         // categoriaDb.alterarCategoria("Infantil", 1);
-
         // - Ler categorias:
         // Categoria[] categorias = categoriaDb.lerCategorias();
-
         // - Imprime categorias:
         // categoriaView.mostrarCategorias(categorias);
 
@@ -43,7 +34,7 @@ public class Main {
         LivroView livroView = new LivroView();
 
         // - Criar livro:
-         // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
+        // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
         // livroDb.criarLivro("1984", "George Orwell", new int[] {1});
         // livroDb.criarLivro("Crime e Castigo", "Fiódor Dostoiévski", new int[] {1,4});
         // livroDb.criarLivro("Hamlet", "William Shakespeare", new int[] {5});
@@ -52,15 +43,31 @@ public class Main {
 
         // Deletar livros:
         // livroDb.deletarLivro(5);
-
         // - Alterar categoria:
         // livroDb.alterarLivro(5, "coisinha", "coisinha");
-
         // - Ler Livros:
         // Livro[] livros = livroDb.lerLivros();
-
         // - Imprime categorias:
         // livroView.mostrarLivros(livros);
+
+
+        // LEITOR: ---------------------------------------------
+        LeitorDb leitorDb = new LeitorDb(database);
+        // criar leitor:
+        // leitorDb.criarLeitor("Katerine Witkoski", "12344559", "katerinewitkoski@gmail.com");
+        // - Alterar leitor:
+        // leitorDb.alterarLeitor("Katerine Witkoski", "katerinewitkoski@email.com", "123456789");
+        // Deletar leitor:
+        // leitorDb.deletarLeitor("123456789");
+
+        // BIBLIOTECARIA: ---------------------------------------------
+        BibliotecariaDb bibliotecariaDb = new BibliotecariaDb(database);
+        // criar Bibliotecaria:
+        // bibliotecariaDb.criarBibliotecaria("Katerine Witkoski", "11111111111", "katerinewitkoski@email.com");
+        // - Alterar Bibliotecaria:
+        // bibliotecariaDb.alterarBibliotecaria("Katerine Witkoski novo", "katerinewitkoskinovo@email.com", "11111111111");
+        // Deletar leitor:
+        // bibliotecariaDb.deletarBibliotecaria("11111111111");
 
     }
 }
