@@ -32,10 +32,19 @@ CREATE TABLE livrosCategoria (
 	FOREIGN KEY (cod_livro) REFERENCES livros(cod_livro)
 );
 -- criar tabela usuario
-CREATE TABLE usuario (
-nome_usuario VARCHAR(30),
-ra_usuario INT
+CREATE TABLE leitor (
+nome_usuario VARCHAR(255),
+ra_usuario LONG,
+cpf_usuario VARCHAR(11)
 );
+
+-- criar tabela bibliotecaria
+
+CREATE TABLE bibliotecaria (
+nome_bibliotecaria VARCHAR(255),
+cpf_bibliotecaria INT
+);
+
 -- criar tabela historico
 CREATE TABLE emprestimo (
 cod_livro INT NOT NULL,
