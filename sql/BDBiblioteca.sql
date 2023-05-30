@@ -33,41 +33,33 @@ CREATE TABLE livrosCategoria (
 );
 -- criar tabela usuario
 CREATE TABLE leitor (
-nome_usuario VARCHAR(255),
-ra_usuario LONG,
-cpf_usuario VARCHAR(11)
+nome_leitor VARCHAR(255),
+ra_leitor VARCHAR(11) PRIMARY KEY,
+cpf_leitor VARCHAR(11)
 );
 
 -- criar tabela bibliotecaria
 
 CREATE TABLE bibliotecaria (
 nome_bibliotecaria VARCHAR(255),
-cpf_bibliotecaria VARCHAR(11)
+cpf_bibliotecaria VARCHAR (11)
 );
 
 -- criar tabela historico
 CREATE TABLE emprestimo (
 cod_livro INT NOT NULL,
-nome_livro VARCHAR(30),
-autor_livro VARCHAR(30),
 status_livro VARCHAR(30),
-nome_usuario VARCHAR(30)
+ra_leitor VARCHAR(11)
 );
 
 -- criar tabela usuarioEmprestimo
 /*
 solicitado criar index para tabela usuario, 
-criado idx_usuario_ra_usuario
+criado idx_leitor_ra_leitor
 */
-CREATE TABLE usuarioEmprestimo (
+CREATE TABLE leitorEmprestimo (
 cod_livro INT NOT NULL,
-ra_usuario INT NOT NULL, 
+ra_leitor VARCHAR (11),
 FOREIGN KEY (cod_livro) REFERENCES livros(cod_livro),
-FOREIGN KEY (ra_usuario) REFERENCES usuario(ra_usuario)
+FOREIGN KEY (ra_leitor) REFERENCES leitor(ra_leitor)
 );
-
--- renomear tabelas usuario e usuarioEmprestimo
-USE biblioteca;
-
-RENAME TABLE usuario TO leitor; 
-RENAME TABLE usuarioEmprestimo TO leitorEmprestimo;
