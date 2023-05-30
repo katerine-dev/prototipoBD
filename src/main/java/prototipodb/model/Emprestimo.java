@@ -2,30 +2,46 @@ package prototipodb.model;
 /*
 Atributos:
 - Codigo Livro
-- Nome
-- Autor
 - Status (String - somente 3 possíveis - Reservado/Excluído/Disponível)
-- Nome Leitor
+- RA leitor
 */
 
 public class Emprestimo {
-    public Livro codigo;
-    public Livro nome;
-    public Livro autor;
-    public String status;
-    public Leitor nomeLeitor;
+    public int codigoLivro;
+    public String statusLivro;
+    public String raLeitor;
 
     // Método construtor:
-    public Emprestimo(Livro codigo,
-                      Livro nome,
-                      Livro autor,
-                      String status,
-                      Leitor nomeLeitor){
-        this.codigo = codigo;
-        this.nome = nome;
-        this.autor = autor;
-        this.status = status;
-        this.nomeLeitor = nomeLeitor;
+    public Emprestimo(int codigo, String status, String RA){
+        this.codigoLivro = codigo;
+        this.statusLivro = status;
+        this.raLeitor = RA;
     }
 
+    public int getCodigoLivro() {
+        return codigoLivro;
+    }
+
+    public void setCodigoLivro(int codigoLivro) {
+        this.codigoLivro = codigoLivro;
+    }
+
+    public String getStatusLivro() {
+        return statusLivro;
+    }
+
+    public void setStatusLivro(String statusLivro) {
+        this.statusLivro = statusLivro;
+    }
+
+    public String getRaLeitor() {
+        return raLeitor;
+    }
+
+    public void setRaLeitor(String raLeitor) {
+        this.raLeitor = raLeitor;
+    }
+
+    
+    
 }

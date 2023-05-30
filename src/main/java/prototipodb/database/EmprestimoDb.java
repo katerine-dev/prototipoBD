@@ -1,5 +1,5 @@
 package prototipodb.database;
-import prototipodb.model.Categoria;
+import prototipodb.model.Emprestimo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,21 +68,21 @@ public class EmprestimoDb {
 
 
         // Executar a instrução SQL da variável `instrucao`
-        ResultSet resultados = instrucao.executeQuery(sql);
+        ResultSet resultados = instrucao.executeQuery();
         Emprestimo[] emprestimos = new Emprestimo[maximoNumeroDeResultados];
 
         int i = 0;
         while (resultados.next()) { 
-            String statusLivro = resultados.getString(2);
             int codigoLivro = resultados.getInt(1);
-            String raLeitor = resultados.getString(2);
+            String statusLivro = resultados.getString(2);
+            String raLeitor = resultados.getString(3);
             
-            Emprestimo Emprestimo = new Emprestimo (statusLivro, codigoLivro, raLeitor);
-            Emprestimos[i] = emprestimo;
-            i = i + 1;
+            Emprestimo emprestimo = new Emprestimo(codigoLivro, statusLivro, raLeitor);
+            emprestimos[i] = emprestimo;
+            i++;
         }
 
-        return emprestimo;
+        return emprestimos;
     }
 
     
