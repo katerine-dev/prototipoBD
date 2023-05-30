@@ -57,10 +57,10 @@ public class Main {
         // livroDb.alterarLivro(5, "coisinha", "coisinha");
 
         // - Ler Livros:
-        Livro[] livros = livroDb.lerLivros();
+        // Livro[] livros = livroDb.lerLivros();
 
         // - Imprime categorias:
-        livroView.mostrarLivros(livros);
+        // livroView.mostrarLivros(livros);
 
     }
 }
