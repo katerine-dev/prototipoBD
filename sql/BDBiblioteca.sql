@@ -45,4 +45,20 @@ status_livro VARCHAR(30),
 nome_usuario VARCHAR(30)
 );
 
--- teste
+-- criar tabela usuarioEmprestimo
+/*
+solicitado criar index para tabela usuario, 
+criado idx_usuario_ra_usuario
+*/
+CREATE TABLE usuarioEmprestimo (
+cod_livro INT NOT NULL,
+ra_usuario INT NOT NULL, 
+FOREIGN KEY (cod_livro) REFERENCES livros(cod_livro),
+FOREIGN KEY (ra_usuario) REFERENCES usuario(ra_usuario)
+);
+
+-- renomear tabelas usuario e usuarioEmprestimo
+USE biblioteca;
+
+RENAME TABLE usuario TO leitor; 
+RENAME TABLE usuarioEmprestimo TO leitorEmprestimo;
