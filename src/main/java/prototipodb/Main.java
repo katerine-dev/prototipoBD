@@ -17,21 +17,13 @@ public class Main {
 
         Database database = new Database(serverName, databaseName, password, username);
 
-
-
-
-
-
-
-
-        
         // IGNORA A PARTE DE BAIXO
+        //TESTES DE INTERAÇÃO COM BANCO DE DADOS:
 
         // interações com a tabela categorias:
         CategoriaDb categoriaDb = new CategoriaDb(database);
         CategoriaView categoriaView = new CategoriaView();
 
-        //TESTES DE INTERAÇÃO COM BANCO DE DADOS:
         // CATEGORIA: ____________________________________
 
         // - Criar categoria:
@@ -41,10 +33,10 @@ public class Main {
         // categoriaDb.alterarCategoria("Infantil", 1);
 
         // - Ler categorias:
-         Categoria[] categorias = categoriaDb.lerCategorias();
+        // Categoria[] categorias = categoriaDb.lerCategorias();
 
         // - Imprime categorias:
-         categoriaView.mostrarCategorias(categorias);
+        // categoriaView.mostrarCategorias(categorias);
 
         // LIVROS E LIVROS CATEGORIAS: ______________________
         LivroDb livroDb = new LivroDb(database);
@@ -65,10 +57,10 @@ public class Main {
         // livroDb.alterarLivro(5, "coisinha", "coisinha");
 
         // - Ler Livros:
-         Livro[] livros = livroDb.lerLivros();
+        Livro[] livros = livroDb.lerLivros();
 
         // - Imprime categorias:
-         livroView.mostrarLivros(livros);
+        livroView.mostrarLivros(livros);
 
     }
 }

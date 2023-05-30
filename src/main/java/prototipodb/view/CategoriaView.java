@@ -16,13 +16,9 @@ public class CategoriaView {
         }
         System.out.println();
         // Imprimindo as linhas da tabela
-        int j = 0;
-        while(categorias[j] != null){
+        for (int j = 0; j < categorias.length; j++){
             System.out.print(categorias[j].getCodigo() + "\t");
             System.out.println(categorias[j].getNome() + "\t");
-            j = j + 1;
         }
-
     }
-
 }

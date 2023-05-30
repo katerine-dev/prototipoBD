@@ -91,7 +91,13 @@ public class LivroDb {
 
     }
     public Livro[] lerLivros() throws Exception {
-        int maximoNumeroDeResultados = 100;
+        // Preciso definir o tamanho do vetor
+        String sqlCountCategorias = "SELECT count(*) FROM livrosCategoria";
+        PreparedStatement instrucaoCountCategorias = this.database.getConnection().prepareStatement(sqlCountCategorias);
+        ResultSet resultadosCountCategorias = instrucaoCountCategorias.executeQuery(sqlCountCategorias);
+        resultadosCountCategorias.next();
+        int maximoNumeroDeResultados = resultadosCountCategorias.getInt(1);
+
         String sql = "SELECT lc.cod_livro, l.nome_livro, l.autor_livro, lc.cod_categoria, c.nome_categoria " +
                 "FROM livrosCategoria lc " +
                 "JOIN livros l ON lc.cod_livro = l.cod_livro " +

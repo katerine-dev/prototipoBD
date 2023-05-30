@@ -23,3 +23,6 @@ UPDATE categoria SET nome_categoria = 'Suspense'
 
 -- Visualizar
 SELECT * FROM categoria;
+
+-- Para contar as linhas da tabela categoria
+SELECT count(*) FROM categoria;

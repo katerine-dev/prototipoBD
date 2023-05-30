@@ -12,17 +12,15 @@ public class LivroView {
             System.out.print(cabecalho[i] + "\t"); // caractere de tabulação
         }
         System.out.println();
+
         // Imprimindo as linhas da tabela
-        int j = 0;
-        while(livros[j] != null){
+        for (int j = 0; j < livros.length; j++){
             System.out.print(livros[j].getCodigo() + " | \t");
             System.out.print(livros[j].getTitulo() + " | \t");
             System.out.print(livros[j].getAutor() + " | \t");
             System.out.print(livros[j].getCategoria().getCodigo() + " | \t");
             System.out.print(livros[j].getCategoria().getNome() + " | \t");
             System.out.println();
-            j = j + 1;
         }
-
     }
 }

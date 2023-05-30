@@ -53,9 +53,16 @@ public class CategoriaDb {
     }
 
     public Categoria[] lerCategorias() throws Exception {
-        int maximoNumeroDeResultados = 100; // Preciso definir o tamanho do vetor
+        // Preciso definir o tamanho do vetor
+        String sqlCountCategorias = "SELECT count(*) FROM categoria";
+        PreparedStatement instrucaoCountCategorias = this.database.getConnection().prepareStatement(sqlCountCategorias);
+        ResultSet resultadosCountCategorias = instrucaoCountCategorias.executeQuery(sqlCountCategorias);
+        resultadosCountCategorias.next();
+        int maximoNumeroDeResultados = resultadosCountCategorias.getInt(1);
+
         String sql = "SELECT * FROM categoria LIMIT " +  maximoNumeroDeResultados;
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+
 
         // Executar a instrução SQL da variável `instrucao`
         ResultSet resultados = instrucao.executeQuery(sql);
