@@ -8,25 +8,17 @@ Atributos:
 public class Bibliotecaria extends Usuario {
     private String CPF;
     // Método construtor:
-    public Leitor(String nome, String email, String CPF){
+    public Bibliotecaria(String nome, String email, String CPF){
         super(nome, email);
-        this.CPF = validaCPF(CPF);
+        this.CPF = CPF;
     }
 
-    public boolean validaCPF(String CPF){
-        // Verificando se o CPF possui 11 dígitos
-        if (CPF.length() != 11) {
-            return false;
-        }
+    public String getCPF() {
         return CPF;
     }
 
-    public int getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(int CPF) {
-        this.CPF = this.validaCPF(CPF);
+    public void setCPF(String CPF) {
+        this.CPF = this.CPF;
     }
 
 }

@@ -3,6 +3,7 @@ package prototipodb;
 import prototipodb.database.CategoriaDb;
 import prototipodb.database.Database;
 import prototipodb.database.LivroDb;
+import prototipodb.database.LeitorDb;
 import prototipodb.model.Categoria;
 import prototipodb.view.CategoriaView;
 import prototipodb.model.Livro;
@@ -61,6 +62,16 @@ public class Main {
 
         // - Imprime categorias:
         // livroView.mostrarLivros(livros);
+
+
+        // LEITOR: ---------------------------------------------
+        LeitorDb leitorDb = new LeitorDb(database);
+        // criar leitor:
+        // leitorDb.criarLeitor("Katerine Witkoski", "12344559", "katerinewitkoski@gmail.com");
+        // - Alterar leitor:
+        // leitorDb.alterarLeitor("Katerine Witkoski", "katerinewitkoski@email.com", "123456789");
+        // Deletar leitor:
+        // leitorDb.deletarLeitor("123456789");
 
     }
 }

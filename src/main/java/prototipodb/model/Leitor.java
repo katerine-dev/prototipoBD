@@ -2,23 +2,23 @@ package prototipodb.model;
 /*
 Atributos:
 - Nome (String)
-- RA (long)
+- RA (String)
 - email (String)
  */
 public class Leitor extends Usuario {
-    public long RA;
+    public String RA;
 
     // Método construtor:
-    public Leitor(String nome, String CPF, long RA){
-        super(nome, CPF);
+    public Leitor(String nome, String email, String RA){
+        super(nome, email);
         this.RA = RA;
     }
 
-    public long getRA() {
+    public String getRA() {
         return RA;
     }
 
-    public void setRA(long RA) {
+    public void setRA(String RA) {
         this.RA = RA;
     }
 }
