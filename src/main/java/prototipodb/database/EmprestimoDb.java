@@ -8,11 +8,10 @@ Atributos:
 - Nome Usuário (recebido da tabela Usuário - será que é melhor passar informação em forma de número de código?)
 
 Métodos:
-- Criar (CREATE)
-- Alterar (UPDATE)
-- Apagar (DELETE - excluir livro danificado)
+- Criar (CREATE) -
+- Alterar (UPDATE) - manualmente - código
 - Ler e imprimir (READ)
  */
 
-public class Emprestimo {
+public class EmprestimoDb {
 }

@@ -13,5 +13,5 @@ Métodos:
 - Reservar
 - Devolver
  */
-public class Usuario {
+public class UsuarioDb {
 }
