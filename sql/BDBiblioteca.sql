@@ -42,7 +42,7 @@ cpf_usuario VARCHAR(11)
 
 CREATE TABLE bibliotecaria (
 nome_bibliotecaria VARCHAR(255),
-cpf_bibliotecaria INT
+cpf_bibliotecaria VARCHAR(11)
 );
 
 -- criar tabela historico
