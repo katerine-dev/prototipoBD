@@ -1,6 +1,10 @@
-SELECT * FROM usuario;
--- para vizualizar usuarioEmprestimo
-SELECT ue.cod_livro, e.nome_livro, e.autor_livro, e.status_livro, ue.ra_usuario, u.nome_usuario
-FROM livrosCategoria ue
-JOIN emprestimo e ON ue.cod_livro = e.cod_livro
-JOIN categoria c ON ue.ra_usuario = u.ra_usuario;
+-- TABELA EMPRESTIMO E LEITOR EMPRESTIMO
+-- A tabela leitorEmprestimo é reponsável pelo histório de empretimo e devolução de livros
+
+-- para visualizar emprestimo
+SELECT * FROM emprestimo;
+-- para vizualizar leitorEmprestimo
+SELECT lc.cod_livro, le.status_livro, l.ra_leitor
+FROM leitorEmprestimo le
+JOIN livrosCategoria lc ON le.cod_livro = lc.cod_livro
+JOIN leitor l ON le.ra_leitor = l.ra_leitor;

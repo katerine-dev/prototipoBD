@@ -26,3 +26,5 @@ SELECT * FROM categoria;
 
 -- Para contar as linhas da tabela categoria
 SELECT count(*) FROM categoria;
+
+-- Jheni precisa criar interação com delete. 
