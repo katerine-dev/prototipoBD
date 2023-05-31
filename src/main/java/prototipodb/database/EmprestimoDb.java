@@ -7,13 +7,12 @@ import java.sql.*;
 /*
 Atributos:
 - Codigo Livros (Chave estrangeira da tabela livros)
-- Status (String - somente 3 possíveis - Reservado/Excluído/Disponível)
+- Status (String - somente 2 possíveis - Reservado/Disponível)
 - RA_usuario (String)
 
 Métodos:
-- Criar (CREATE) -
-- Alterar (UPDATE) - manualmente - código
 - Ler e imprimir (READ)
+- Criar método para reserva e devolução de livros (INSERT e UPDATE)
  */
 
 public class EmprestimoDb {

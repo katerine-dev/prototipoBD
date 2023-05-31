@@ -70,13 +70,7 @@ public class Main {
         // bibliotecariaDb.deletarBibliotecaria("11111111111");
 
         // EMPRESTIMO: ---------------------------------------------
-        BibliotecariaDb bibliotecariaDb = new BibliotecariaDb(database);
-        // criar Bibliotecaria:
-        // bibliotecariaDb.criarBibliotecaria("Katerine Witkoski", "11111111111", "katerinewitkoski@email.com");
-        // - Alterar Bibliotecaria:
-        // bibliotecariaDb.alterarBibliotecaria("Katerine Witkoski novo", "katerinewitkoskinovo@email.com", "11111111111");
-        // Deletar leitor:
-        // bibliotecariaDb.deletarBibliotecaria("11111111111");
+
 
     }
 }
