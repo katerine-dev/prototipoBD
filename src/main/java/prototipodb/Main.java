@@ -80,7 +80,7 @@ public class Main {
         // Emprestimo[] emprestimos = emprestimoDb.lerEmprestimo();
         // - Imprime categorias:
         // emprestimoView.mostrarEmprestimos(emprestimos);
-        
+
     }
 }
 

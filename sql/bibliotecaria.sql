@@ -1,4 +1,4 @@
 -- Bibliotecaria
 SELECT * FROM leitor;
 
--- Jheni precisa criar interação com INSERT, UPDATE e DELETE. 
+-- Jenni precisa criar interação com INSERT, UPDATE e DELETE. 
