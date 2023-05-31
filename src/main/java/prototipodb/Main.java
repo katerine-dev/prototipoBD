@@ -1,9 +1,9 @@
 package prototipodb;
 
 import prototipodb.database.*;
-import prototipodb.model.Categoria;
+import prototipodb.model.Emprestimo;
 import prototipodb.view.CategoriaView;
-import prototipodb.model.Livro;
+import prototipodb.view.EmprestimoView;
 import prototipodb.view.LivroView;
 
 public class Main {
@@ -70,8 +70,17 @@ public class Main {
         // bibliotecariaDb.deletarBibliotecaria("11111111111");
 
         // EMPRESTIMO: ---------------------------------------------
-
-
+        EmprestimoDb emprestimoDb = new EmprestimoDb(database);
+        EmprestimoView emprestimoView = new EmprestimoView();
+        // Alugar livro:
+        // emprestimoDb.reservarLivro("09876543211", 3);
+        // Devolver livro:
+        // emprestimoDb.devolverLivro(1, "12345678910");
+        // - Ler Emprestimos:
+        // Emprestimo[] emprestimos = emprestimoDb.lerEmprestimo();
+        // - Imprime categorias:
+        // emprestimoView.mostrarEmprestimos(emprestimos);
+        
     }
 }
 

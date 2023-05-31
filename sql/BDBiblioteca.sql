@@ -49,7 +49,7 @@ email_bibliotecaria VARCHAR(100)
 CREATE TABLE leitor (
 nome_leitor VARCHAR(255),
 ra_leitor VARCHAR(11) PRIMARY KEY,
-cpf_leitor VARCHAR(11)
+email_leitor VARCHAR(100)
 );
 
 -- criar tabela leitorEmprestimo

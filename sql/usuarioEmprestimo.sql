@@ -1,8 +1,6 @@
 -- TABELA EMPRESTIMO E LEITOR EMPRESTIMO
 -- A tabela leitorEmprestimo é reponsável pelo histório de empretimo e devolução de livros
 
--- para visualizar emprestimo
-SELECT * FROM emprestimo;
 -- para vizualizar leitorEmprestimo
 SELECT lc.cod_livro, le.status_livro, l.ra_leitor
 FROM leitorEmprestimo le

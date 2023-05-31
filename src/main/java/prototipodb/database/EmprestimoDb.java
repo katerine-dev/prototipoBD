@@ -22,46 +22,81 @@ public class EmprestimoDb {
     public EmprestimoDb(Database database){
         this.database = database;
     }
-    
-    public void criarStatus(String novoStatus) throws Exception {
-        String sql = "INSERT INTO emprestimo (status_livro) VALUES (?)";
+
+    // Método para verificar se tem disponibilidade do livro
+    private boolean verificarDisponibilidadeLivro(int codLivro) throws SQLException {
+        String sql = "SELECT status_livro FROM leitorEmprestimo WHERE cod_livro = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
-        
-        // Definir os valores dos parâmetros
-        instrucao.setString(1, novoStatus);
+        instrucao.setInt(1, codLivro);
+        ResultSet resultSet = instrucao.executeQuery();
 
-        // Executar a instrução SQL da variável `instrucao`
-        instrucao.executeUpdate();
+        if (resultSet.next()) {
+            String statusLivro = resultSet.getString("status_livro");
+            return !statusLivro.equalsIgnoreCase("alugado");
+        }
+        return true;
+    }
+    
+    public void reservarLivro(String raLeitor, int codLivro) throws Exception {
 
-        System.out.println("Status criado!");
+        boolean livroDisponivel = verificarDisponibilidadeLivro(codLivro);
+
+        if (livroDisponivel) {
+            // Inserir reserva na tabela leitorEmprestimo
+            String sql = "INSERT INTO leitorEmprestimo (cod_livro, status_livro, ra_leitor) VALUES (?, ?, ?)";
+            PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+            instrucao.setInt(1, codLivro);
+            instrucao.setString(2, "alugado");
+            instrucao.setString(3, raLeitor);
+            instrucao.executeUpdate();
+
+            System.out.println("Livro reservado com sucesso!");
+        } else {
+            System.out.println("O livro não está disponível para reserva.");
+        }
 
     }
 
-    public void alterarStatus(String novoStatus, int codigo, String RA) throws Exception {
-        String sql = "UPDATE emprestimo SET status_livro = (?) WHERE cod_livro = (?) && RA_ = (?)";
+    private boolean verificarLivroEmprestado(int codLivro, String raLeitor) throws SQLException {
+        String sql = "SELECT status_livro FROM leitorEmprestimo WHERE cod_livro = ? AND ra_leitor = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+        instrucao.setInt(1, codLivro);
+        instrucao.setString(2, raLeitor);
+        ResultSet resultSet = instrucao.executeQuery();
 
-        // Definir os valores dos parâmetros
-        instrucao.setString(1, novoStatus);
-        instrucao.setInt(2, codigo);
-        instrucao.setString(3, RA);
+        return resultSet.next();
+    }
 
-        // Executar a instrução SQL da variável `instrucao`
-        instrucao.executeUpdate();
+    public void devolverLivro(int codLivro, String raLeitor) throws Exception {
 
+        boolean livroEmprestado = verificarLivroEmprestado(codLivro, raLeitor);
 
-        System.out.println("Status alterado!");
+        if (!livroEmprestado) {
+            System.out.println("O livro não está emprestado.");
+            return;
+        }
+            // Alterar a reserva na tabela leitorEmprestimo
+            String sql = "UPDATE leitorEmprestimo SET status_livro = ? WHERE cod_livro = ? AND ra_leitor = ?";
+            PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
+            // Definir os valores dos parâmetros
+            instrucao.setString(1, "devolvido");
+            instrucao.setInt(2, codLivro);
+            instrucao.setString(3, raLeitor);
+            instrucao.executeUpdate();
+
+            System.out.println("Livro devolvido com sucesso!");
+
     }
 
     public Emprestimo[] lerEmprestimo() throws Exception {
         // Preciso definir o tamanho do vetor
-        String sqlCountEmprestimos = "SELECT count(*) FROM emprestimo";
+        String sqlCountEmprestimos = "SELECT count(*) FROM leitorEmprestimo";
         PreparedStatement instrucaoCountEmprestimos = this.database.getConnection().prepareStatement(sqlCountEmprestimos);
         ResultSet resultadosCountEmprestimos = instrucaoCountEmprestimos.executeQuery(sqlCountEmprestimos);
         resultadosCountEmprestimos.next();
         int maximoNumeroDeResultados = resultadosCountEmprestimos.getInt(1);
 
-        String sql = "SELECT * FROM emprestimo LIMIT " +  maximoNumeroDeResultados;
+        String sql = "SELECT * FROM leitorEmprestimo LIMIT " +  maximoNumeroDeResultados;
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
 
 
@@ -82,6 +117,4 @@ public class EmprestimoDb {
 
         return emprestimos;
     }
-
-    
 }
