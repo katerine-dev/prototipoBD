@@ -2,7 +2,7 @@ package prototipodb.model;
 /*
 Atributos:
 - Codigo Livro
-- Status (String - somente 3 possíveis - Reservado/Excluído/Disponível)
+- Status (String - somente 2 possíveis - Reservado/Disponível)
 - RA leitor
 */
 
@@ -42,6 +42,4 @@ public class Emprestimo {
         this.raLeitor = raLeitor;
     }
 
-    
-    
 }
