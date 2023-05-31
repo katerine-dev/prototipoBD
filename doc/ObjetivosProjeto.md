@@ -22,6 +22,9 @@ Pode ser usado:
 - Historico/Emprestimo (contendo informações histórico de reserva/exclusão/disponível
         sobre 'codigoLivro'; 'nome'; 'autor'; 'status'; 'nomeUsuario')
 - Categorias (contendo informação das categorias disponíveis)
+- Usuário (classe pai, contendo informações de nome e email das partes) - Herança
+- Leitor (classe filha, contendo informações da classe pai e um atributo excluivo "RA")
+- Bibliotecaria (classe filha, contendo informações da classe pai e um atributo excluivo "CPF")
 
 ### Lógica 
 
@@ -36,10 +39,8 @@ Pode ser usado:
 - ID precisa ter livros duplicados.
 - Método emprestar e devoler - todos o CRUD terá um método. 
 - Criar uma conexão com MySQL (ok)
-- Colocar informações de senha em uma variável de ambiente 
-- Como imprimir no console as informações de uma tabela(?) list? 
+- Imprimir no console as informações de uma tabela
 - Criar um script só para os testes de interação
-- Escolhi fazer dois pacotes diferentes: um contendo as classes com interações de database e outro com classes conceituais (getter, setter)
-  - assim conseguimos vincular a classe responsável pela conexão as outras. 
-
-
+- Escolhi fazer três pacotes diferentes: um contendo as classes com interações de database, outro com 
+classes conceituais (getter, setter) e outro com os métodos de visualização.  
+  - assim conseguimos vincular a classe responsável pela conexão as outras.
