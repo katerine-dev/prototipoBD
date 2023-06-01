@@ -31,22 +31,21 @@ Pode ser usado:
 - Para cada entidade uma classe.
 - Uma classe para a conexão do BD Mysql (ok)
 - O sistema não terá interface gráfica, será programado para ter uma interface no terminal, utilizando a main. 
-  - Funções
-- Criar pesquisa por nome e categoria (resposta com informações dos livros) - pesquisar como mostrar a lista de livros 
-- Criar pesquisa de histórico para a bibliotecária
-- Update: Fará parte do CRUD da tabela livros 
-- Delete: "excluir livro danificado"
+  - Funções (ok)
+- Criar pesquisa por nome e categoria (resposta com informações dos livros) - pesquisar como mostrar a lista de livros (ok)
+- Update: Fará parte do CRUD da tabela livros (ok)
+- Delete: "excluir livro danificado" (ok)
 - ID precisa ter livros duplicados.
-- Método emprestar e devoler - todos o CRUD terá um método. 
+- Método emprestar e devoler - todos o CRUD terá um método. (ok)
 - Criar uma conexão com MySQL (ok)
-- Imprimir no console as informações de uma tabela
+- Imprimir no console as informações de uma tabela (ok)
 - Criar um script só para os testes de interação
 - Escolhi fazer três pacotes diferentes: um contendo as classes com interações de database, outro com 
-classes conceituais (getter, setter) e outro com os métodos de visualização.  
+classes conceituais (getter, setter) e outro com os métodos de visualização.  (ok)
   - assim conseguimos vincular a classe responsável pela conexão as outras.
+- Entendendo as exceções: 
 
-- Entendendo as exceções
-As exceções ocorrem quando algo imprevisto acontece, elas podem ser provenientes de erros de lógica ou acesso a recursos 
+    As exceções ocorrem quando algo imprevisto acontece, elas podem ser provenientes de erros de lógica ou acesso a recursos 
 que talvez não estejam disponíveis.
 Alguns possíveis motivos externos para ocorrer uma exceção são:
 Tentar fazer consulta a um banco de dados que não está disponível.
