@@ -36,7 +36,7 @@ sobre 'codigo_livro'; 'status_livro'; 'ra_leitor')
 - Leitor (classe filha, contendo informações da classe pai e um atributo excluivo "RA")
 - Bibliotecaria (classe filha, contendo informações da classe pai e um atributo excluivo "CPF")
 - Categoria (Como existe uma relação n:n com livros decidimos criar uma classe para categorias)
-- Emprestimo (Contendo a lógica de reservar() e devolver() para os livros)
+- Emprestimo (Contendo a lógica de `reservar()` e `devolver()` para os livros)
 - Livro (contendo toda a parte de gestão dos livros)
 - Database (conexão com o banco de dados)
 

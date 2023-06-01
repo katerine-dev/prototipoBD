@@ -36,7 +36,11 @@ public class EmprestimoDb {
         }
         return true;
     }
-    
+
+    /* Método para reservar livro usando uma conexão MySQL:
+    Ele receberá um ra e um código do livro, primeiro precisamos verificar se o livro está disponível para
+    reserva caso não solte uma mensagem "O livro não está disponível para reserva."
+    */
     public void reservarLivro(String raLeitor, int codLivro) throws Exception {
 
         boolean livroDisponivel = verificarDisponibilidadeLivro(codLivro);
@@ -57,6 +61,7 @@ public class EmprestimoDb {
 
     }
 
+    // Método para verificar se o livro foi emprestado por esse leitor
     private boolean verificarLivroEmprestado(int codLivro, String raLeitor) throws SQLException {
         String sql = "SELECT status_livro FROM leitorEmprestimo WHERE cod_livro = ? AND ra_leitor = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -67,6 +72,10 @@ public class EmprestimoDb {
         return resultSet.next();
     }
 
+    /* Método para devolver livro usando uma conexão MySQL:
+    Ele receberá um ra e um código do livro, primeiro precisamos verificar se o livro foi realmente reservado por esse
+    leitor caso não solte uma mensagem "O livro não está emprestado."
+    */
     public void devolverLivro(int codLivro, String raLeitor) throws Exception {
 
         boolean livroEmprestado = verificarLivroEmprestado(codLivro, raLeitor);
@@ -88,6 +97,10 @@ public class EmprestimoDb {
 
     }
 
+    /* Método para ler emprestimo usando uma conexão MySQL: (método que auxilia o mostrarEmprestimos())
+    Inicialmente precisamos definir um vetor para atribuir um LIMIT no SELECT/JOIN.
+    E com os resultados da query atribuir os valores no novo vetor.
+    */
     public Emprestimo[] lerEmprestimo() throws Exception {
         // Preciso definir o tamanho do vetor
         String sqlCountEmprestimos = "SELECT count(*) FROM leitorEmprestimo";

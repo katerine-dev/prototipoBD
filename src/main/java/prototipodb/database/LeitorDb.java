@@ -22,6 +22,9 @@ public class LeitorDb {
         this.database = database;
     }
 
+    /* Método para criar um novo leitor usando uma conexão MySQL:
+    Na qual, receberá nome, RA (como string) e email
+    */
     public void criarLeitor(String nome, String RA, String email) throws Exception {
         String sql = "INSERT INTO leitor (nome_leitor, ra_leitor, email_leitor) VALUES (?, ?, ?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -38,6 +41,9 @@ public class LeitorDb {
 
     }
 
+    /* Método para alterar algum leitor usando uma conexão MySQL:
+    O ra servirá de referência para encontrar o leitor no banco de dados
+    */
     public void alterarLeitor(String novoNome, String novoEmail, String RA) throws Exception {
         String sql = "UPDATE leitor SET nome_leitor = ?, email_leitor = ? WHERE ra_leitor = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -53,6 +59,10 @@ public class LeitorDb {
 
         System.out.println("Usuário alterado!");
     }
+
+    /* Método para deletar algum leitor usando uma conexão MySQL:
+    O ra servirá de referência para encontrar o leitor no banco de dados
+    */
     public void deletarLeitor(String RA) throws Exception {
         String sql = "DELETE FROM leitor WHERE ra_leitor = (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);

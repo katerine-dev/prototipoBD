@@ -2,12 +2,14 @@ package prototipodb.view;
 
 import prototipodb.model.Livro;
 
-/* Método para visualizar a tabela livros: (método dependente do lerLivros())
-Inicialmente passamos um vetor com todos os nomes de colunas já existentes na tabela livros imprimindo
-o cabeçalho.
-Após utilizando o vetor criado em lerLivros(), imprimimos linha por linha, tabelando as informações.
- */
+
 public class LivroView {
+
+    /* Método para visualizar a tabela livros: (método dependente do lerLivros())
+    Inicialmente passamos um vetor com todos os nomes de colunas já existentes na tabela livros imprimindo
+    o cabeçalho.
+    Após utilizando o vetor criado em lerLivros(), imprimimos linha por linha, tabelando as informações.
+    */
     public void mostrarLivros(Livro[] livros) {
 
         String[] cabecalho = {"Código Livro", "Título", " Autor", "Código Categoria", "Nome Categoria"};
@@ -33,7 +35,7 @@ public class LivroView {
     Inicialmente passamos um vetor com todos os nomes de colunas já existentes na tabela livros imprimindo
     o cabeçalho.
     Após utilizando o vetor criado em filtroLivrosTitulo(), imprimimos linha por linha, tabelando as informações.
-     */
+    */
     public void mostrarFiltroPorTítulo(Livro[] livros) {
 
         String[] cabecalho = {"Código Livro", "Título", " Autor"};
@@ -57,6 +59,7 @@ public class LivroView {
             }
         }
     }
+
     /* Método para visualizar o que foi filtrado (por categoria) da tabela livrosCategoria: (método dependente do filtroLivrosCategoria())
     Inicialmente passamos um vetor com todos os nomes de colunas já existentes na tabela livros imprimindo
     o cabeçalho.

@@ -24,6 +24,9 @@ public class CategoriaDb {
         this.database = database;
     }
 
+    /* Método para criar uma nova categoria usando uma conexão MySQL:
+    Na qual, receberá somente o nome da categoria
+    */
     public void criarCategoria(String novaCategoria) throws Exception {
         String sql = "INSERT INTO categoria (nome_categoria) VALUES (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -37,6 +40,10 @@ public class CategoriaDb {
         System.out.println("Categoria criada!");
 
     }
+
+    /* Método para alterar alguma categoria usando uma conexão MySQL:
+    O código servirá de referência para encontrar a categoria no banco de dados
+    */
     public void alterarCategoria(String novaCategoria, int codigo) throws Exception {
         String sql = "UPDATE categoria SET nome_categoria = (?) WHERE cod_categoria = (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -52,6 +59,10 @@ public class CategoriaDb {
         System.out.println("Categoria alterada!");
     }
 
+    /* Método para ler categorias usando uma conexão MySQL: (método que auxilia o mostrarCategorias())
+    Inicialmente precisamos definir um vetor para atribuir um LIMIT no SELECT/JOIN.
+    E com os resultados da query atribuir os valores no novo vetor.
+    */
     public Categoria[] lerCategorias() throws Exception {
         // Preciso definir o tamanho do vetor
         String sqlCountCategorias = "SELECT count(*) FROM categoria";

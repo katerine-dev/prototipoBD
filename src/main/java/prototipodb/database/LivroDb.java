@@ -35,8 +35,7 @@ public class LivroDb {
     já existente na tabela 'categoria'.
     int[] codigosCategoria vetor para passar várias categorias (relação n:n = um livro pode ter mais de uma categoria,
     uma categoria pode ter mais de um livro)
-     */
-
+    */
     public void criarLivro(String titulo, String autor, int[] codigosCategoria) throws Exception {
         // primeiro INSERT na tabela Livro - preciso fazer o INSERT retornar o ID.
         String sqlLivros = "INSERT INTO livros (nome_livro, autor_livro) VALUES (?, ?)";
@@ -68,10 +67,11 @@ public class LivroDb {
         // Supondo que o usuário sempre irá digitar um código de categoria válido.
         System.out.println("Livro Criado!");
     }
+
     /* Método para alterar livro usando uma conexão MySQL:
     alterarLivro recebe informações de codigo livro para autor ser possível dar UPDATE novo título e novo autor.
     O usuário precisa indicar qual é o novo título e o novo nome de autor.
-     */
+    */
     public void alterarLivro(int codigoLivro, String novoTitulo, String novoAutor) throws Exception {
         String sql = "UPDATE livros SET nome_livro = ?, autor_livro = ? WHERE cod_livro = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -91,8 +91,7 @@ public class LivroDb {
     Em caso do livro ser danificado conseguimos deletar ele dos registros, para isso acontecer precisamos
     deletar primeiro na tabela livrosCategoria (por ser uma tabela relacional, somente com os Primary keys.
     para depois deletar da tabela livros.
-
-     */
+    */
     public void deletarLivro(int codigoLivro) throws Exception {
         // Primeiro precisa excluir da tabela LIVROSCATEGORIA:
         String sqlLivrosCategoria = "DELETE FROM livrosCategoria WHERE cod_livro = (?)";
@@ -120,7 +119,7 @@ public class LivroDb {
     /* Método para ler livro usando uma conexão MySQL: (método que auxilia o mostrarLivros())
     Inicialmente precisamos definir um vetor para atribuir um LIMIT no SELECT/JOIN.
     E com os resultados da query atribuir os valores no novo vetor.
-     */
+    */
     public Livro[] lerLivros() throws Exception {
         // Preciso definir o tamanho do vetor
         String sqlCountCategorias = "SELECT count(*) FROM livrosCategoria";

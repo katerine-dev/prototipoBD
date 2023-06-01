@@ -21,6 +21,9 @@ public class BibliotecariaDb {
         this.database = database;
     }
 
+    /* Método para criar um novo bibliotecário usando uma conexão MySQL:
+    Na qual, receberá nome, CPF (como string) e email
+    */
     public void criarBibliotecaria(String nome, String CPF, String email) throws Exception {
         String sql = "INSERT INTO bibliotecaria (nome_bibliotecaria, cpf_bibliotecaria, email_bibliotecaria) VALUES (?, ?, ?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -37,6 +40,9 @@ public class BibliotecariaDb {
 
     }
 
+    /* Método para alterar algum bibliotecário usando uma conexão MySQL:
+    O cpf servirá de referência para encontrar o bibliotecário no banco de dados
+    */
     public void alterarBibliotecaria(String novoNome, String novoEmail, String CPF) throws Exception {
         String sql = "UPDATE bibliotecaria SET nome_bibliotecaria = ?, email_bibliotecaria = ? WHERE cpf_bibliotecaria = ?";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
@@ -53,6 +59,9 @@ public class BibliotecariaDb {
         System.out.println("Usuário de bibliotecária alterado!");
     }
 
+    /* Método para deletar algum bibliotecário usando uma conexão MySQL:
+    O cpf servirá de referência para encontrar o bibliotecário no banco de dados
+    */
     public void deletarBibliotecaria(String CPF) throws Exception {
         String sql = "DELETE FROM bibliotecaria WHERE cpf_bibliotecaria = (?)";
         PreparedStatement instrucao = this.database.getConnection().prepareStatement(sql);
