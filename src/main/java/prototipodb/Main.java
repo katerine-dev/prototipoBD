@@ -1,10 +1,8 @@
 package prototipodb;
 
 import prototipodb.database.*;
-import prototipodb.model.Emprestimo;
-import prototipodb.view.CategoriaView;
-import prototipodb.view.EmprestimoView;
-import prototipodb.view.LivroView;
+import prototipodb.model.*;
+import prototipodb.view.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -49,7 +47,12 @@ public class Main {
         // Livro[] livros = livroDb.lerLivros();
         // - Imprime categorias:
         // livroView.mostrarLivros(livros);
-
+        // - Filtro por nome do livro:
+        // Livro[] livros = livroDb.filtroLivrosTitulo("Orgulho e Preconceito");
+        // livroView.mostrarFiltroPorTítulo(livros);
+        // - Filtro por nome do livro:
+        // Livro[] livros = livroDb.filtroLivrosCategoria("Romance");
+        // livroView.mostrarFiltroPorCategoria(livros);
 
         // LEITOR: ---------------------------------------------
         LeitorDb leitorDb = new LeitorDb(database);

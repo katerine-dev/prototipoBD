@@ -44,3 +44,11 @@ Pode ser usado:
 - Escolhi fazer três pacotes diferentes: um contendo as classes com interações de database, outro com 
 classes conceituais (getter, setter) e outro com os métodos de visualização.  
   - assim conseguimos vincular a classe responsável pela conexão as outras.
+
+- Entendendo as exceções
+As exceções ocorrem quando algo imprevisto acontece, elas podem ser provenientes de erros de lógica ou acesso a recursos 
+que talvez não estejam disponíveis.
+Alguns possíveis motivos externos para ocorrer uma exceção são:
+Tentar fazer consulta a um banco de dados que não está disponível.
+Tentar conectar em servidor inexistente.
+Para tratar as exceções em Java são utilizados os comandos try e catch ou throws exception
