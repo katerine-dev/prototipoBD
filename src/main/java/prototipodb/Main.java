@@ -32,12 +32,13 @@ public class Main {
         LivroView livroView = new LivroView();
 
         // - Criar livro:
-        // livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
+         livroDb.criarLivro("Orgulho e Preconceito", "Jane Austen", new int[] {1,2});
         // livroDb.criarLivro("1984", "George Orwell", new int[] {1});
         // livroDb.criarLivro("Crime e Castigo", "Fiódor Dostoiévski", new int[] {1,4});
         // livroDb.criarLivro("Hamlet", "William Shakespeare", new int[] {5});
         // livroDb.criarLivro("Cem Anos de Solidão", "Gabriel Márquez", new int[] {1,6});
         // livroDb.criarLivro("Anna Kariênina", "Liev Tolstói", new int[] {1,2});
+        
 
         // Deletar livros:
         // livroDb.deletarLivro(5);
