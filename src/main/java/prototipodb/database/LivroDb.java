@@ -193,6 +193,7 @@ public class LivroDb {
             i = i + 1;
         }
         return livrosEncontrados;
+        // incluir mensagem de não encontrado o livro.
     }
 
     /* Método para filtrar a busca de usuário por categoria da tabela livro usando uma conexão MySQL:
@@ -238,5 +239,6 @@ public class LivroDb {
             i = i + 1;
         }
         return livrosEncontrados;
+
     }
 }
