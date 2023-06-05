@@ -49,7 +49,7 @@ public class Main {
                         case 1:
                             int op11 = 1;
 
-                            while (op11 != 0);{
+                            while (op11 != 0){
                             System.out.println("Você selecionou Livros");
                             System.out.println("=== Menu Livros ===");
                             System.out.println("1 - Visualizar Livros");
