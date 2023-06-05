@@ -1,14 +1,15 @@
-# Protótipo Biblioteca Digital
+Protótipo Biblioteca Digital
 
-## Relatório de Aplicação - Protótipo de um sistema de biblioteca.
+Relatório de Aplicação - Protótipo de um sistema de biblioteca.
 
-### Introdução
+Introdução
 
 O Sistema da Biblioteca Digital é uma aplicação desenvolvida em Java para auxiliar na gestão de disponibilidade de livros e 
 reserva de livros. O sistema permite o cadastro, consulta, atualização e exclusão de dados sobre usuários e livros.
 Decidimos fornecer somente uma interface via terminal para interação dos usuários.
 
-### Desenvolvimento
+Desenvolvimento
+
 O desenvolvimento do Sistema da Biblioteca Digital foi realizado seguindo os princípios da programação orientada a objetos,
 utilizando a linguagem de programação Java. O projeto foi estruturado em diferentes pacotes para separar as responsabilidades 
 e facilitar a manutenção e extensibilidade do código. (database, model, view)
@@ -18,7 +19,7 @@ Foram utilizadas as seguintes tecnologias e ferramentas no desenvolvimento do si
 * MySQL: Utilizado como banco de dados para armazenar os dados da Biblioteca.
 * JDBC: Utilizado para realizar a conexão com o banco de dados e executar consultas e atualizações.
 
-#### Banco de Dados SQL 'BIBLIOTECA' com 6 tabelas: (Relacional)
+Banco de Dados SQL 'BIBLIOTECA' com 6 tabelas: (Relacional)
 
 - Livros (contendo informações sobre 'cod_livro'; 'nome_livro'; 'autor_livro')
 - Categoria (contendo informação sobre 'cod_categoria', 'nome_categoria')
@@ -30,7 +31,7 @@ sobre 'codigo_livro'; 'status_livro'; 'ra_leitor')
 - Bibliotecaria (contendo informações sobre 'nome_bibliotecaria'; 'cpf_bibliotecaria'; 'email_bibliotecaria')
 
 
-#### Definições das classes: 
+Definições das classes: 
 
 - Usuário (classe pai, contendo informações de nome e email das partes) - Herança
 - Leitor (classe filha, contendo informações da classe pai e um atributo excluivo "RA")
@@ -40,7 +41,7 @@ sobre 'codigo_livro'; 'status_livro'; 'ra_leitor')
 - Livro (contendo toda a parte de gestão dos livros)
 - Database (conexão com o banco de dados)
 
-#### Decisões de funcionalidades: 
+Decisões de funcionalidades: 
 
 O Sistema de Gerenciamento de Funcionários possui as seguintes funcionalidades principais:
 1. Usuários: 
@@ -69,7 +70,7 @@ O Sistema de Gerenciamento de Funcionários possui as seguintes funcionalidades 
 4. Database: 
 - Permite uma conexão com o banco de dados MySQL: `Database()`.
 
-### Uso
+Uso
 
 - Exemplo de chamada: (Criando um novo cadastro para Leitor)
 ```
@@ -86,7 +87,7 @@ LeitorDb leitorDb = new LeitorDb(database);
 leitorDb.criarLeitor("Katerine Witkoski", "12344559", "katerinewitkoski@gmail.com")
 ```
 
-### Estrutura do Projeto
+Estrutura do Projeto
 
 O projeto foi estruturado em diferentes pacotes para separar as responsabilidades
 e facilitar a manutenção e extensibilidade do código.
@@ -94,10 +95,8 @@ e facilitar a manutenção e extensibilidade do código.
 - model
 - view
 
-Existe uma pasta `doc` (contendo os objetivos do trabalho e esse mesmo relatório em .txt) e uma pasta
-`sql` (contendo todos os scripts relacionados ao banco de dados).
+Existe uma pasta `doc` (contendo os objetivos do trabalho e esse mesmo relatório em .txt) e uma pasta `sql` (contendo todos os scripts relacionados ao banco de dados).
 
 Para utilizar do sistema compile o arquivo `Main`. 
-
 
 
