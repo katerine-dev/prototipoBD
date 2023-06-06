@@ -1,14 +1,13 @@
 package prototipodb.view;
 
-import prototipodb.database.BibliotecariaDb;
-import prototipodb.database.Database;
-import prototipodb.database.LeitorDb;
-
+import prototipodb.database.*;
 import java.util.Scanner;
 
 public class BibliotecariaView {
 
-    private void opcaoBibliotecario(Database database, Scanner entrada) throws Exception {
+    public void opcaoBibliotecario(Database database,
+                                    Scanner entrada,
+                                    BibliotecariaDb bibliotecariaDb) throws Exception {
         int opcaoBibliotecaria = 1;
 
         while (opcaoBibliotecaria != 0) {
@@ -22,14 +21,12 @@ public class BibliotecariaView {
             opcaoBibliotecaria = entrada.nextInt();
             entrada.nextLine();
 
-            BibliotecariaDb bibliotecariaDb = new BibliotecariaDb(database);
-
             switch (opcaoBibliotecaria) {
                 case 1:
-                    alterarBibliotecaria(bibliotecariaDb, entrada);
+                    alterarBibliotecariaInterface(database, entrada, bibliotecariaDb);
                     break;
                 case 2:
-                    deletarBibliotecaria(bibliotecariaDb, entrada);
+                    deletarBibliotecariaInterface(database, entrada, bibliotecariaDb);
                     break;
                 case 0:
                     System.out.println("Voltando ao menu anterior.......");
@@ -39,6 +36,22 @@ public class BibliotecariaView {
                     break;
             }
         }
+    }
+
+    public void alterarBibliotecariaInterface(Database database, Scanner entrada, BibliotecariaDb bibliotecariaDb) throws Exception {
+        System.out.println("Digite o novo nome da bibliotecária: : ");
+        String novoNome = entrada.nextLine();
+        System.out.println("Digite o novo email: ");
+        String novoEmail = entrada.nextLine();
+        System.out.println("Digite o novo CPF: ");
+        String CPF = entrada.nextLine();
+        bibliotecariaDb.alterarBibliotecaria(novoNome,novoEmail, CPF);
+    }
+
+    public void deletarBibliotecariaInterface(Database database, Scanner entrada, BibliotecariaDb bibliotecariaDb) throws Exception {
+        System.out.println("Digite o CPF que deseja deletar: ");
+        String CPF = entrada.nextLine();
+        bibliotecariaDb.deletarBibliotecaria(CPF);
     }
 
 }

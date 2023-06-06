@@ -1,36 +1,30 @@
 package prototipodb.view;
 
-import prototipodb.database.BibliotecariaDb;
 import java.util.Scanner;
 import prototipodb.database.*;
-import prototipodb.view.*;
-import prototipodb.model.*;
 
 public class MetodosInterfaceB {
 
-    public void realizarAcoesBibliotecario() throws Exception {
-        String username = "root";
-        String password = "rootroot";
-        String databaseName = "BIBLIOTECA";
-        String serverName = "localhost";
+    public static void realizarAcoesBibliotecario(Database database) throws Exception {
         Scanner entrada = new Scanner(System.in);
-        // conexão com o banco de dados
-        Database database = new Database(serverName, databaseName, password, username);
-
-        // INTERAÇÃO COM BANCO DE DADOS:
-        // CATEGORIA: ____________________________________
+                // INTERAÇÃO COM BANCO DE DADOS:
+        // CATEGORIA: -------------------------------------------------
         CategoriaDb categoriaDb = new CategoriaDb(database);
         CategoriaView categoriaView = new CategoriaView();
-        // LIVROS E LIVROS CATEGORIAS: ______________________
+        // LIVROS E LIVROS CATEGORIAS: --------------------------------
         LivroDb livroDb = new LivroDb(database);
         LivroView livroView = new LivroView();
-        // LEITOR: ---------------------------------------------
+        // LEITOR: ----------------------------------------------------
         LeitorDb leitorDb = new LeitorDb(database);
+        LeitorView leitorView = new LeitorView();
         // BIBLIOTECARIA: ---------------------------------------------
         BibliotecariaDb bibliotecariaDb = new BibliotecariaDb(database);
-        // EMPRESTIMO: ---------------------------------------------
+        BibliotecariaView bibliotecariaView = new BibliotecariaView();
+        // EMPRESTIMO: ------------------------------------------------
         EmprestimoDb emprestimoDb = new EmprestimoDb(database);
         EmprestimoView emprestimoView = new EmprestimoView();
+        // USUÁRIO: ---------------------------------------------------
+        UsuarioView usuarioView = new UsuarioView();
 
         // Interface
         System.out.println("Olá bibliotecário!" + "\nVocê possui cadastro? Digite S (para sim)  ou N (para não)");
@@ -45,7 +39,12 @@ public class MetodosInterfaceB {
                     categoriaView,
                     categoriaDb,
                     emprestimoDb,
-                    emprestimoView
+                    emprestimoView,
+                    bibliotecariaDb,
+                    bibliotecariaView,
+                    usuarioView,
+                    leitorDb,
+                    leitorView
             );
         } else if (respostaCadastroBibliotecaria.equalsIgnoreCase("N")) {
             cadastrarBibliotecaria(database, entrada, bibliotecariaDb);
@@ -57,14 +56,19 @@ public class MetodosInterfaceB {
                     categoriaView,
                     categoriaDb,
                     emprestimoDb,
-                    emprestimoView
+                    emprestimoView,
+                    bibliotecariaDb,
+                    bibliotecariaView,
+                    usuarioView,
+                    leitorDb,
+                    leitorView
             );
         } else {
             System.out.println("Resposta inválida");
         }
     }
 
-    private void exibirMenuBibliotecaria(Database database,
+    private static void exibirMenuBibliotecaria(Database database,
                                                 Scanner entrada,
                                                 LivroDb livroDb,
                                                 LivroView livroView,
@@ -72,7 +76,11 @@ public class MetodosInterfaceB {
                                                 CategoriaDb categoriaDb,
                                                 EmprestimoDb emprestimoDb,
                                                 EmprestimoView emprestimoView,
-                                                UsuarioView usuarioView) throws Exception {
+                                                BibliotecariaDb bibliotecariaDb,
+                                                BibliotecariaView bibliotecariaView,
+                                                UsuarioView usuarioView,
+                                                LeitorDb leitorDb,
+                                                LeitorView leitorView) throws Exception {
         int opcao = -1;
 
         while (opcao != 0) {
@@ -108,7 +116,13 @@ public class MetodosInterfaceB {
                     );
                     break;
                 case 3:
-                    usuarioView.realizarAcoesUsuarios(database); // corrigir amanhã
+                     usuarioView.realizarAcoesUsuarios(
+                             database,
+                             entrada,
+                             bibliotecariaView,
+                             leitorView,
+                             bibliotecariaDb,
+                             leitorDb);
                     break;
                 case 4:
                     emprestimoView.realizarAcoesEmprestimos(
@@ -130,7 +144,7 @@ public class MetodosInterfaceB {
     }
 
     // CADASTRO BIBLIOTECÁRIO:
-    public void cadastrarBibliotecaria(Database database,
+    public static void cadastrarBibliotecaria(Database database,
                                               Scanner entrada,
                                               BibliotecariaDb bibliotecariaDb) throws Exception {
         System.out.println("vamos fazer  seu cadastro!");

@@ -1,12 +1,15 @@
 package prototipodb.view;
-
-import prototipodb.database.Database;
-
+import prototipodb.database.*;
 import java.util.Scanner;
 
 public class UsuarioView {
     // USUARIO:
-    public void realizarAcoesUsuarios(Database database, Scanner entrada) throws Exception {
+    public void realizarAcoesUsuarios(Database database,
+                                      Scanner entrada,
+                                      BibliotecariaView bibliotecariaView,
+                                      LeitorView leitorView,
+                                      BibliotecariaDb bibliotecariaDb,
+                                      LeitorDb leitorDb) throws Exception {
 
         int opcao = -1;
         while (opcao != 0) {
@@ -19,13 +22,21 @@ public class UsuarioView {
             System.out.println("===========================");
 
             opcao = entrada.nextInt();
-            switch (opcao) {
                 switch (opcao) {
                     case 1:
-                        opcaoBibliotecario(database, entrada);
+                        bibliotecariaView.opcaoBibliotecario(
+                            database,
+                            entrada,
+                            bibliotecariaDb
+                        );
+
                         break;
                     case 2:
-                        opcaoLeitor(database, entrada);
+                        leitorView.opcaoLeitor(
+                                database,
+                                entrada,
+                                leitorDb
+                        );
                         break;
                     case 0:
                         System.out.println("Voltando ao menu anterior.......");
@@ -37,4 +48,3 @@ public class UsuarioView {
             }
         }
     }
-}

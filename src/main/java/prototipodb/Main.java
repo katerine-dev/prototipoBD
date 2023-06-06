@@ -1,7 +1,7 @@
 package prototipodb;
 
-import prototipodb.database.*;
-import prototipodb.view.*;
+import prototipodb.database.Database;
+import prototipodb.view.MetodosInterfaceB;
 
 import java.util.Scanner;
 
@@ -21,12 +21,13 @@ public class Main {
         String respostaUsuario = entrada.nextLine();
 
         if (respostaUsuario.equalsIgnoreCase("B")) {
-            MetodosInterfaceB.realizarAcoesBibliotecario();
+            MetodosInterfaceB.realizarAcoesBibliotecario(database);
         } else if (respostaUsuario.equalsIgnoreCase("L")) {
             // realizarAcoesLeitor();
         } else {
             System.out.println("Resposta inválida");
         }
+        entrada.close();
     }
 }
 

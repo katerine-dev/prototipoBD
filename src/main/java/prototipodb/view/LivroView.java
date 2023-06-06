@@ -163,7 +163,7 @@ public class LivroView {
         // Precisa mostrar categorias antes:
         Categoria[] categorias = categoriaDb.lerCategorias();
         categoriaView.mostrarCategorias(categorias);
-
+        entrada.nextLine();
         System.out.println("Digite o nome do livro: ");
         String titulo = entrada.nextLine();
         System.out.println("Digite o nome do autor: ");

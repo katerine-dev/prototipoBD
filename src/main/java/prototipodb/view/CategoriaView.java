@@ -1,7 +1,5 @@
 package prototipodb.view;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.Scanner;
 
 import prototipodb.database.CategoriaDb;
@@ -87,21 +85,21 @@ public class CategoriaView {
         }
     }
 
-    public static void visualizarCategoriasInterface(Database database,
+    public void visualizarCategoriasInterface(Database database,
                                      CategoriaDb categoriaDb,
                                      CategoriaView categoriaView) throws Exception {
         Categoria[] categorias = categoriaDb.lerCategorias();
         categoriaView.mostrarCategorias(categorias);
     }
 
-    public static void criarCategoriasInterface(Database database, Scanner entrada, CategoriaDb categoriaDb) throws Exception {
+    public void criarCategoriasInterface(Database database, Scanner entrada, CategoriaDb categoriaDb) throws Exception {
         entrada.nextLine();
         System.out.println("Digite a nova categoria: ");
         String novaCategoria = entrada.nextLine();
         categoriaDb.criarCategoria(novaCategoria);
     }
 
-    public static void alterarCategoriasInterface(Database database, Scanner entrada,  CategoriaDb categoriaDb) throws Exception{
+    public void alterarCategoriasInterface(Database database, Scanner entrada,  CategoriaDb categoriaDb) throws Exception{
         System.out.println("Nome da nova categoria: ");
         entrada.nextLine();
         String novaCategoria = entrada.nextLine();
@@ -109,6 +107,4 @@ public class CategoriaView {
         int codigo = entrada.nextInt();
         categoriaDb.alterarCategoria(novaCategoria, codigo);
     }
-
-
 }

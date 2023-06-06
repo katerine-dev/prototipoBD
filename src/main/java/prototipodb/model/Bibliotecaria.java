@@ -18,7 +18,7 @@ public class Bibliotecaria extends Usuario {
     }
 
     public void setCPF(String CPF) {
-        this.CPF = this.CPF;
+        this.CPF = CPF;
     }
 
 }

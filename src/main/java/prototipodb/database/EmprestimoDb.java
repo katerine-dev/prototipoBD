@@ -1,6 +1,5 @@
 package prototipodb.database;
 import prototipodb.model.Emprestimo;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.*;
 
