@@ -30,7 +30,10 @@ public class CategoriaView {
         }
     }
 
-    // CATEGORIAS INTERFACE:
+    // INTERFACE
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe Categorias. 
+     */
     public void realizarAcoesCategorias(Database database,
                                                 Scanner entrada,
                                                 CategoriaDb categoriaDb,

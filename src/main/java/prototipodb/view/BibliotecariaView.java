@@ -4,7 +4,10 @@ import prototipodb.database.*;
 import java.util.Scanner;
 
 public class BibliotecariaView {
-
+    // INTERFACE
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe Bibliotecaria. 
+     */
     public void opcaoBibliotecario(Database database,
                                     Scanner entrada,
                                     BibliotecariaDb bibliotecariaDb) throws Exception {

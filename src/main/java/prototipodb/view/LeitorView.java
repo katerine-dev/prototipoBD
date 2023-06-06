@@ -4,6 +4,10 @@ import prototipodb.database.*;
 import java.util.Scanner;
 
 public class LeitorView {
+     // INTERFACE
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe Leitor. 
+     */
     public void opcaoLeitor(Database database,
                             Scanner entrada,
                             LeitorDb leitorDb) throws Exception {

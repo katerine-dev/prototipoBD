@@ -31,7 +31,9 @@ public class EmprestimoView {
         }
     }
     // EMPRESTIMO INTERFACE
-
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe emprestimo. 
+     */
     public void realizarAcoesEmprestimos(Database database,
                                          Scanner entrada,
                                          EmprestimoDb emprestimoDb,
@@ -63,6 +65,7 @@ public class EmprestimoView {
             }
         }
     }
+    
     public void realizarEmprestimoInterface(Database database,
                                          Scanner entrada,
                                          EmprestimoDb emprestimoDb) throws Exception {
@@ -76,7 +79,6 @@ public class EmprestimoView {
     public void devolverLivroInterface(Database database,
                                             Scanner entrada,
                                             EmprestimoDb emprestimoDb) throws Exception {
-
         System.out.println("Digite o seu RA: ");
         String RA = entrada.nextLine();
         entrada.nextLine();

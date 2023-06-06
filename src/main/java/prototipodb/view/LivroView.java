@@ -97,7 +97,10 @@ public class LivroView {
         }
     }
 
-    // LIVROS INTERFACE:
+    // INTERFACE
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe Livro. 
+     */
     public void realizarAcoesLivros(Database database,
                                             Scanner entrada,
                                             LivroDb livroDb,

@@ -8,7 +8,7 @@ public class MetodosInterfaceB {
 
     public static void realizarAcoesBibliotecario(Database database) throws Exception {
         Scanner entrada = new Scanner(System.in);
-                // INTERAÇÃO COM BANCO DE DADOS:
+        // Intância das classes usadas nas ações:
         // CATEGORIA: -------------------------------------------------
         CategoriaDb categoriaDb = new CategoriaDb(database);
         CategoriaView categoriaView = new CategoriaView();
@@ -45,8 +45,7 @@ public class MetodosInterfaceB {
                     bibliotecariaView,
                     usuarioView,
                     leitorDb,
-                    leitorView
-            );
+                    leitorView);
         } else if (respostaCadastroBibliotecaria.equalsIgnoreCase("N")) {
             cadastrarBibliotecaria(database, entrada, bibliotecariaDb);
             exibirMenuBibliotecaria(
@@ -62,13 +61,14 @@ public class MetodosInterfaceB {
                     bibliotecariaView,
                     usuarioView,
                     leitorDb,
-                    leitorView
-            );
+                    leitorView);
         } else {
             System.out.println("Resposta inválida");
         }
     }
-
+    /* Método para exibir o menu da sessão da bibliotecária.
+    Aqui ficam todas as interações possíveis para a bibliotecária. 
+     */
     private static void exibirMenuBibliotecaria(Database database,
                                                 Scanner entrada,
                                                 LivroDb livroDb,
@@ -105,16 +105,14 @@ public class MetodosInterfaceB {
                             livroDb,
                             livroView,
                             categoriaDb,
-                            categoriaView
-                    );
+                            categoriaView);
                     break;
                 case 2:
                     categoriaView.realizarAcoesCategorias(
                             database,
                             entrada,
                             categoriaDb,
-                            categoriaView
-                    );
+                            categoriaView);
                     break;
                 case 3:
                      usuarioView.realizarAcoesUsuarios(
@@ -130,8 +128,7 @@ public class MetodosInterfaceB {
                             database,
                             entrada,
                             emprestimoDb,
-                            emprestimoView
-                    );
+                            emprestimoView);
                     break;
                 case 5:
                     System.out.println("Encerrando o programa.......");
@@ -144,13 +141,11 @@ public class MetodosInterfaceB {
         }
     }
 
-    // CADASTRO BIBLIOTECÁRIO:
+    // Método para cadastro da bibliotecária pela interface.
     public static void cadastrarBibliotecaria(Database database,
                                               Scanner entrada,
                                               BibliotecariaDb bibliotecariaDb) throws Exception {
         System.out.println("Vamos fazer seu cadastro!");
-
-        // cadastro do bibliotecária
         System.out.println("Digite seu nome: ");
         String nome = entrada.nextLine();
         System.out.println("Digite seu CPF: ");
@@ -159,5 +154,4 @@ public class MetodosInterfaceB {
         String email = entrada.nextLine();
         bibliotecariaDb.criarBibliotecaria(nome, CPF, email);
     }
-
 }

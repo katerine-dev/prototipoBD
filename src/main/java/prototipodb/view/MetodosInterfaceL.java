@@ -6,19 +6,15 @@ import prototipodb.database.LeitorDb;
 import prototipodb.database.LivroDb;
 
 import java.util.Scanner;
-
-
-
 public class MetodosInterfaceL {
     public static void realizarAcoesLeitor(Database database) throws Exception {
         Scanner entrada = new Scanner(System.in);
-        // INTERAÇÃO COM BANCO DE DADOS:
+        // Intância das classes usadas nas ações:
         // LIVROS E LIVROS CATEGORIAS: --------------------------------
         LivroDb livroDb = new LivroDb(database);
         LivroView livroView = new LivroView();
         // LEITOR: ----------------------------------------------------
         LeitorDb leitorDb = new LeitorDb(database);
-        LeitorView leitorView = new LeitorView();
         // EMPRESTIMO: ------------------------------------------------
         EmprestimoDb emprestimoDb = new EmprestimoDb(database);
         EmprestimoView emprestimoView = new EmprestimoView();
@@ -50,6 +46,10 @@ public class MetodosInterfaceL {
         }
 
     }
+
+    /* Método para exibir o menu da sessão do Leitor.
+    Aqui ficam todas as interações possíveis para o Leitor. 
+     */
     public static void exibirMenuLeitor(Database database,
                                         Scanner entrada,
                                         LivroDb livroDb,
@@ -87,8 +87,7 @@ public class MetodosInterfaceL {
                     emprestimoView.devolverLivroInterface(
                             database,
                             entrada,
-                            emprestimoDb
-                    );
+                            emprestimoDb);
                     break;
                 case 4:
                     System.out.println("Encerrando o programa.......");
@@ -100,6 +99,7 @@ public class MetodosInterfaceL {
         }
     }
 
+    // Cadastro do leitor pela interface
     public static void cadastrarLeitor(Database database,
                                         Scanner entrada,
                                         LeitorDb leitorDb) throws Exception {
@@ -114,5 +114,4 @@ public class MetodosInterfaceL {
         String email = entrada.nextLine();
         leitorDb.criarLeitor(nome, RA, email);
     }
-
 }

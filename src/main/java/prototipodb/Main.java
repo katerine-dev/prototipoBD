@@ -22,6 +22,7 @@ public class Main {
         String respostaUsuario = entrada.nextLine();
 
         if (respostaUsuario.equalsIgnoreCase("B")) {
+            // Separamos em ações para Bibliotecária e Leitores
             MetodosInterfaceB.realizarAcoesBibliotecario(database);
         } else if (respostaUsuario.equalsIgnoreCase("L")) {
             MetodosInterfaceL.realizarAcoesLeitor(database);

@@ -3,7 +3,10 @@ import prototipodb.database.*;
 import java.util.Scanner;
 
 public class UsuarioView {
-    // USUARIO:
+    // INTERFACE
+     /* Métodos que fazem parte do funcionamento da interface.
+    Interações com a classe Usuário. 
+     */
     public void realizarAcoesUsuarios(Database database,
                                       Scanner entrada,
                                       BibliotecariaView bibliotecariaView,
