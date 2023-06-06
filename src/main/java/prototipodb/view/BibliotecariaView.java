@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BibliotecariaView {
 
-    private void opcaoBibliotecario(Database database, Scanner entrada) throws Exception {
+    private static void opcaoBibliotecario(Database database, Scanner entrada) throws Exception {
         int opcaoBibliotecaria = 1;
 
         while (opcaoBibliotecaria != 0) {

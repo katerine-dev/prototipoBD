@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class UsuarioView {
     // USUARIO:
-    public void realizarAcoesUsuarios(Database database, Scanner entrada) throws Exception {
+    public static void realizarAcoesUsuarios(Database database, Scanner entrada) throws Exception {
 
         int opcao = -1;
         while (opcao != 0) {

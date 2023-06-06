@@ -33,7 +33,7 @@ public class CategoriaView {
     }
 
     // CATEGORIAS INTERFACE:
-    public void realizarAcoesCategorias(Database database,
+    public static void realizarAcoesCategorias(Database database,
                                                 Scanner entrada,
                                                 CategoriaDb categoriaDb,
                                                 CategoriaView categoriaView) throws Exception {
@@ -87,21 +87,21 @@ public class CategoriaView {
         }
     }
 
-    public void visualizarCategoriasInterface(Database database,
+    public static void visualizarCategoriasInterface(Database database,
                                      CategoriaDb categoriaDb,
                                      CategoriaView categoriaView) throws Exception {
         Categoria[] categorias = categoriaDb.lerCategorias();
         categoriaView.mostrarCategorias(categorias);
     }
 
-    public void criarCategoriasInterface(Database database, Scanner entrada, CategoriaDb categoriaDb) throws Exception {
+    public static void criarCategoriasInterface(Database database, Scanner entrada, CategoriaDb categoriaDb) throws Exception {
         entrada.nextLine();
         System.out.println("Digite a nova categoria: ");
         String novaCategoria = entrada.nextLine();
         categoriaDb.criarCategoria(novaCategoria);
     }
 
-    public void alterarCategoriasInterface(Database database, Scanner entrada,  CategoriaDb categoriaDb) throws Exception{
+    public static void alterarCategoriasInterface(Database database, Scanner entrada,  CategoriaDb categoriaDb) throws Exception{
         System.out.println("Nome da nova categoria: ");
         entrada.nextLine();
         String novaCategoria = entrada.nextLine();
