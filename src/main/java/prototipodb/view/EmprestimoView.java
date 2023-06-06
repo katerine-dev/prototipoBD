@@ -63,4 +63,25 @@ public class EmprestimoView {
             }
         }
     }
+    public void realizarEmprestimoInterface(Database database,
+                                         Scanner entrada,
+                                         EmprestimoDb emprestimoDb) throws Exception {
+        System.out.println("Digite o seu RA: ");
+        String RA = entrada.nextLine();
+        System.out.println("Digite o código do livro que você quer alugar: ");
+        int codigoLivro = entrada.nextInt();
+        emprestimoDb.reservarLivro(RA, codigoLivro);
+    }
+
+    public void devolverLivroInterface(Database database,
+                                            Scanner entrada,
+                                            EmprestimoDb emprestimoDb) throws Exception {
+
+        System.out.println("Digite o seu RA: ");
+        String RA = entrada.nextLine();
+        entrada.nextLine();
+        System.out.println("Digite o código do livro que você quer devolver: ");
+        int codigoLivro = entrada.nextInt();
+        emprestimoDb.devolverLivro(codigoLivro, RA);
+    }
 }

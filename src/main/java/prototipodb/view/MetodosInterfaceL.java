@@ -1,7 +1,7 @@
 package prototipodb.view;
 
-import prototipodb.database.CategoriaDb;
 import prototipodb.database.Database;
+import prototipodb.database.EmprestimoDb;
 import prototipodb.database.LeitorDb;
 import prototipodb.database.LivroDb;
 
@@ -13,25 +13,27 @@ public class MetodosInterfaceL {
     public static void realizarAcoesLeitor(Database database) throws Exception {
         Scanner entrada = new Scanner(System.in);
         // INTERAÇÃO COM BANCO DE DADOS:
-        // CATEGORIA: -------------------------------------------------
-        CategoriaDb categoriaDb = new CategoriaDb(database);
-        CategoriaView categoriaView = new CategoriaView();
         // LIVROS E LIVROS CATEGORIAS: --------------------------------
         LivroDb livroDb = new LivroDb(database);
         LivroView livroView = new LivroView();
         // LEITOR: ----------------------------------------------------
         LeitorDb leitorDb = new LeitorDb(database);
         LeitorView leitorView = new LeitorView();
+        // EMPRESTIMO: ------------------------------------------------
+        EmprestimoDb emprestimoDb = new EmprestimoDb(database);
+        EmprestimoView emprestimoView = new EmprestimoView();
 
         // Interface
-        System.out.println("Olá leitor!" + "\nVocê possui cadastro? Digite SIM (para sim)  ou NÃO (para não)");
+        System.out.println("Olá leitor!" + "\nVocê possui cadastro? Digite S (para sim)  ou N (para não)");
         String respostaCadastroLeitor = entrada.nextLine();
 
         if (respostaCadastroLeitor.equalsIgnoreCase("S")) {
             exibirMenuLeitor(database,
                     entrada,
                     livroDb,
-                    livroView);
+                    livroView,
+                    emprestimoDb,
+                    emprestimoView);
         } else if (respostaCadastroLeitor.equalsIgnoreCase("N")) {
             cadastrarLeitor(
                     database,
@@ -40,16 +42,20 @@ public class MetodosInterfaceL {
             exibirMenuLeitor(database,
                     entrada,
                     livroDb,
-                    livroView);
+                    livroView,
+                    emprestimoDb,
+                    emprestimoView);
         } else {
             System.out.println("Resposta inválida");
         }
 
     }
     public static void exibirMenuLeitor(Database database,
-                                         Scanner entrada,
-                                         LivroDb livroDb,
-                                         LivroView livroView) throws Exception  {
+                                        Scanner entrada,
+                                        LivroDb livroDb,
+                                        LivroView livroView,
+                                        EmprestimoDb emprestimoDb,
+                                        EmprestimoView emprestimoView) throws Exception  {
         int opcao = -1;
 
         while (opcao != 0) {
@@ -65,16 +71,24 @@ public class MetodosInterfaceL {
 
             switch (opcao) {
                 case 1:
-                    livroView.pesquisarLivrosInterface(database,
+                    livroView.pesquisarLivrosInterface(
+                            database,
                             entrada,
                             livroDb,
                             livroView);
                     break;
                 case 2:
-                    //realizarEmprestimo();
+                    emprestimoView.realizarEmprestimoInterface(
+                            database,
+                            entrada,
+                            emprestimoDb);
                     break;
                 case 3:
-                    //devolverLivro();
+                    emprestimoView.devolverLivroInterface(
+                            database,
+                            entrada,
+                            emprestimoDb
+                    );
                     break;
                 case 4:
                     System.out.println("Encerrando o programa.......");
