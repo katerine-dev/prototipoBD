@@ -15,7 +15,7 @@ public class Main {
         // Conexão com o MySQL
         Database database = new Database(serverName, databaseName, password, username);
 
-        // INTERFACE:
+        // INTERFACE: ----
         System.out.println("Bem vindo(a) a essa biblioteca");
         System.out.println("Você é bibliotecário ou leitor?" + "\nDigite B para bibliotecário ou L para leitor:");
         String respostaUsuario = entrada.nextLine();
