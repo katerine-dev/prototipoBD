@@ -2,6 +2,7 @@ package prototipodb;
 
 import prototipodb.database.Database;
 import prototipodb.view.MetodosInterfaceB;
+import prototipodb.view.MetodosInterfaceL;
 
 import java.util.Scanner;
 
@@ -23,7 +24,7 @@ public class Main {
         if (respostaUsuario.equalsIgnoreCase("B")) {
             MetodosInterfaceB.realizarAcoesBibliotecario(database);
         } else if (respostaUsuario.equalsIgnoreCase("L")) {
-            // realizarAcoesLeitor();
+            MetodosInterfaceL.realizarAcoesLeitor(database);
         } else {
             System.out.println("Resposta inválida");
         }

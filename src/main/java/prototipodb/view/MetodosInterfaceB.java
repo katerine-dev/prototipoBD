@@ -1,7 +1,8 @@
 package prototipodb.view;
 
-import java.util.Scanner;
 import prototipodb.database.*;
+
+import java.util.Scanner;
 
 public class MetodosInterfaceB {
 
@@ -147,7 +148,7 @@ public class MetodosInterfaceB {
     public static void cadastrarBibliotecaria(Database database,
                                               Scanner entrada,
                                               BibliotecariaDb bibliotecariaDb) throws Exception {
-        System.out.println("vamos fazer  seu cadastro!");
+        System.out.println("Vamos fazer seu cadastro!");
 
         // cadastro do bibliotecária
         System.out.println("Digite seu nome: ");

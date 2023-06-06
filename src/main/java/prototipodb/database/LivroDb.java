@@ -1,26 +1,11 @@
 package prototipodb.database;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-/*
-Atributos:
-- Nome (String)
-- Autor (String)
-- código Livros (Chave primária - int)
-- Categoria (Chave estrangeira da tabela categorias - int)
-
-Métodos:
-- Criar (CREATE) - ok
-- Alterar (UPDATE) - ok
-- Apagar (DELETE - excluir livro danificado) - ok
-- Imprimir (SELECT) - ok
-- Filtro por livro - ok
-- Filtro por categoria - ok
- */
 
 import prototipodb.model.Categoria;
 import prototipodb.model.Livro;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class LivroDb {
     private Database database;
@@ -191,8 +176,12 @@ public class LivroDb {
             livrosEncontrados[i] = livro;
             i = i + 1;
         }
+
+        if (i == 0) {
+            System.out.println("Livro não encontrado, tente novamente!!");
+        }
+
         return livrosEncontrados;
-        // incluir mensagem de não encontrado o livro.
     }
 
     /* Método para filtrar a busca de usuário por categoria da tabela livro usando uma conexão MySQL:

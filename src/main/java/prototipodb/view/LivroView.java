@@ -203,4 +203,46 @@ public class LivroView {
         livroDb.deletarLivro(codigoLivro);
     }
 
+    public void pesquisarLivrosInterface(Database database,
+                                         Scanner entrada,
+                                         LivroDb livroDb,
+                                         LivroView livroView) throws Exception {
+        int opcao = -1;
+        while (opcao != 0) {
+            System.out.println("======= Menu Pesquisa Livros ========");
+            System.out.println("Você deseja pesquisar um livro por:");
+            System.out.println("1 - Título");
+            System.out.println("2 - Categoria");
+            System.out.println("0 - Voltar ao menu anterior");
+            System.out.println("====================================");
+
+            opcao = entrada.nextInt();
+            entrada.nextLine();
+
+            switch (opcao) {
+                // PRIMEIRA OPÇÃO VISUALIZAR PESQUISA POR TÍTULO
+                case 1:
+                    System.out.println("Digite o nome do livro: ");
+                    String tituloLivro = entrada.nextLine();
+                    Livro[] livrosPorTitulo = livroDb.filtroLivrosTitulo(tituloLivro);
+                    livroView.mostrarFiltroPorTítulo(livrosPorTitulo);
+                    break;
+                // SEGUNDA OPÇÃO VISUALIZAR PESQUISA POR CATEGORIA
+                case 2:
+                    System.out.println("Digite a categoria desejada: ");
+                    String categoria = entrada.nextLine();
+                    Livro[] livrosPorcategorias = livroDb.filtroLivrosCategoria(categoria);
+                    livroView.mostrarFiltroPorCategoria(livrosPorcategorias);
+                    break;
+                // VOLTAR AO MENU ANTERIOR
+                case 0:
+                    System.out.println("Voltando ao menu anterior.......");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+                    break;
+            }
+        }
+    }
+
 }
