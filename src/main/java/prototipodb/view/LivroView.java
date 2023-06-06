@@ -1,6 +1,12 @@
 package prototipodb.view;
 
+import prototipodb.database.CategoriaDb;
+import prototipodb.database.Database;
+import prototipodb.database.LivroDb;
+import prototipodb.model.Categoria;
 import prototipodb.model.Livro;
+
+import java.util.Scanner;
 
 
 public class LivroView {
@@ -90,4 +96,111 @@ public class LivroView {
             }
         }
     }
+
+    // LIVROS INTERFACE:
+    public void realizarAcoesLivros(Database database,
+                                            Scanner entrada,
+                                            LivroDb livroDb,
+                                            LivroView livroView,
+                                            CategoriaDb categoriaDb,
+                                            CategoriaView categoriaView) throws Exception {
+        // Realizar ações relacionadas aos livros
+        int opcao = -1; //porque é diferente de 0 e é diferente das opções apresentada no menu
+
+        while (opcao != 0) {
+            System.out.println("======= Menu Livros ========");
+            System.out.println("1 - Visualizar Livros");
+            System.out.println("2 - Criar Livro");
+            System.out.println("3 - Alterar Livros");
+            System.out.println("4 - Deletar Livros");
+            System.out.println("0 - Voltar ao menu anterior");
+            System.out.println("===========================");
+
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+                // PRIMEIRA OPÇÃO VISUALIZAR LIVROS
+                case 1:
+                    visualizarLivrosInterface(database, livroDb, livroView);
+                    break;
+                // SEGUNDA OPÇÃO CRIAR LIVROS
+                case 2:
+                    criarLivroInterface(database, entrada, livroDb, categoriaDb, categoriaView);
+                    break;
+                // TERCEIRA OPÇÃO ALTERAR LIVROS
+                case 3:
+                    alterarLivroInterface(database, entrada, livroDb);
+                    break;
+                // QUARTA OPÇÃO DELETAR LIVROS
+                case 4:
+                    deletarLivroInterface(database, entrada, livroDb);
+                    break;
+                // VOLTAR AO MENU ANTERIOR
+                case 0:
+                    System.out.println("Voltando ao menu anterior.......");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+                    break;
+            }
+        }
+    }
+
+    public void visualizarLivrosInterface(Database database,
+                                         LivroDb livroDb,
+                                         LivroView livroView) throws Exception {
+        // Exibir lista de livros
+        Livro[] livros = livroDb.lerLivros();
+        livroView.mostrarLivros(livros);
+    }
+
+    public void criarLivroInterface(Database database,
+                                   Scanner entrada,
+                                   LivroDb livroDb,
+                                   CategoriaDb categoriaDb,
+                                   CategoriaView categoriaView) throws Exception {
+        // Criar um novo livro
+        // Precisa mostrar categorias antes:
+        Categoria[] categorias = categoriaDb.lerCategorias();
+        categoriaView.mostrarCategorias(categorias);
+
+        System.out.println("Digite o nome do livro: ");
+        String titulo = entrada.nextLine();
+        System.out.println("Digite o nome do autor: ");
+        String autor = entrada.nextLine();
+        entrada.nextLine();
+        // precisa saber o tamanho do vetor
+        System.out.println("Digite quantas categorias ele tem:");
+        int tamanho = entrada.nextInt();
+
+        int[] codigosCategoria = new int[tamanho];
+        System.out.println("Digite o código da categoria: ");
+        for (int i = 0; i < tamanho; i++) {
+            codigosCategoria[i] = entrada.nextInt();
+        }
+        livroDb.criarLivro(titulo, autor, codigosCategoria);
+    }
+
+    public void alterarLivroInterface(Database database,
+                                     Scanner entrada,
+                                     LivroDb livroDb) throws Exception {
+        // Alterar informações de um livro existente
+        System.out.println("Digite o código do livro que deseja alterar: ");
+        int codigoLivro = entrada.nextInt();
+        System.out.println("Digite o novo nome do livro: ");
+        String novoTitulo = entrada.next();
+        System.out.println("Digite o novo nome do autor: ");
+        String novoAutor = entrada.next();
+        livroDb.alterarLivro(codigoLivro, novoTitulo, novoAutor);
+    }
+
+    public void deletarLivroInterface(Database database,
+                                     Scanner entrada,
+                                     LivroDb livroDb) throws Exception {
+        // Deletar um livro existente
+        System.out.println("Digite o código do livro que deseja excluir: ");
+        int codigoLivro = entrada.nextInt();
+        livroDb.deletarLivro(codigoLivro);
+    }
+
 }
