@@ -32,7 +32,7 @@ public class EmprestimoView {
     }
     // EMPRESTIMO INTERFACE
 
-    public static void realizarAcoesEmprestimos(Database database,
+    public void realizarAcoesEmprestimos(Database database,
                                          Scanner entrada,
                                          EmprestimoDb emprestimoDb,
                                          EmprestimoView emprestimoView) throws Exception {

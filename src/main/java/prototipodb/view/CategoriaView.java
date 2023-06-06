@@ -33,7 +33,7 @@ public class CategoriaView {
     }
 
     // CATEGORIAS INTERFACE:
-    public static void realizarAcoesCategorias(Database database,
+    public void realizarAcoesCategorias(Database database,
                                                 Scanner entrada,
                                                 CategoriaDb categoriaDb,
                                                 CategoriaView categoriaView) throws Exception {

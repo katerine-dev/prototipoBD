@@ -8,7 +8,7 @@ import prototipodb.model.*;
 
 public class MetodosInterfaceB {
 
-    public static void realizarAcoesBibliotecario() throws Exception {
+    public void realizarAcoesBibliotecario() throws Exception {
         String username = "root";
         String password = "rootroot";
         String databaseName = "BIBLIOTECA";
@@ -64,7 +64,7 @@ public class MetodosInterfaceB {
         }
     }
 
-    private static void exibirMenuBibliotecaria(Database database,
+    private void exibirMenuBibliotecaria(Database database,
                                                 Scanner entrada,
                                                 LivroDb livroDb,
                                                 LivroView livroView,
@@ -130,7 +130,7 @@ public class MetodosInterfaceB {
     }
 
     // CADASTRO BIBLIOTECÁRIO:
-    public static void cadastrarBibliotecaria(Database database,
+    public void cadastrarBibliotecaria(Database database,
                                               Scanner entrada,
                                               BibliotecariaDb bibliotecariaDb) throws Exception {
         System.out.println("vamos fazer  seu cadastro!");

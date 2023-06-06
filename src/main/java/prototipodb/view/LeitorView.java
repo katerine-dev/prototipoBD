@@ -1,7 +1,7 @@
 package prototipodb.view;
 
 public class LeitorView {
-    public static void opcaoLeitor(Database database, Scanner entrada) throws Exception {
+    public void opcaoLeitor(Database database, Scanner entrada) throws Exception {
         int opcaoLeitor = 1;
 
         while (opcaoLeitor != 0) {

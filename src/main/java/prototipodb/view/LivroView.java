@@ -98,7 +98,7 @@ public class LivroView {
     }
 
     // LIVROS INTERFACE:
-    public static void realizarAcoesLivros(Database database,
+    public void realizarAcoesLivros(Database database,
                                             Scanner entrada,
                                             LivroDb livroDb,
                                             LivroView livroView,
@@ -146,7 +146,7 @@ public class LivroView {
         }
     }
 
-    public static void visualizarLivrosInterface(Database database,
+    public void visualizarLivrosInterface(Database database,
                                          LivroDb livroDb,
                                          LivroView livroView) throws Exception {
         // Exibir lista de livros
@@ -154,7 +154,7 @@ public class LivroView {
         livroView.mostrarLivros(livros);
     }
 
-    public static void criarLivroInterface(Database database,
+    public void criarLivroInterface(Database database,
                                    Scanner entrada,
                                    LivroDb livroDb,
                                    CategoriaDb categoriaDb,
@@ -181,7 +181,7 @@ public class LivroView {
         livroDb.criarLivro(titulo, autor, codigosCategoria);
     }
 
-    public static void alterarLivroInterface(Database database,
+    public void alterarLivroInterface(Database database,
                                      Scanner entrada,
                                      LivroDb livroDb) throws Exception {
         // Alterar informações de um livro existente
@@ -194,7 +194,7 @@ public class LivroView {
         livroDb.alterarLivro(codigoLivro, novoTitulo, novoAutor);
     }
 
-    public static void deletarLivroInterface(Database database,
+    public void deletarLivroInterface(Database database,
                                      Scanner entrada,
                                      LivroDb livroDb) throws Exception {
         // Deletar um livro existente
