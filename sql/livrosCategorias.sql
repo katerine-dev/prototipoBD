@@ -16,4 +16,3 @@ FROM livrosCategoria lc
 JOIN livros l ON lc.cod_livro = l.cod_livro
 JOIN categoria c ON lc.cod_categoria = c.cod_categoria;
 
-

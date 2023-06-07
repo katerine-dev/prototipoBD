@@ -13,10 +13,14 @@ INSERT INTO categoria (nome_categoria) VALUES ('Romance'),
 												('Contos'),
                                                 ('Literatura Árabe'),
                                                 ('Filosófico');
+								
 
 
 -- Interações com a tabela Categorias 
--- Testes para interações com Java -- NÃO RODAR
+-- Testes para interações com Java 
+-- Inserir mais informações 
+INSERT INTO categoria (nome_categoria) VALUES ('Infantil');
+
 -- Alterar informações
 UPDATE categoria SET nome_categoria = 'Suspense'
  WHERE cod_categoria = 1;
@@ -27,4 +31,7 @@ SELECT * FROM categoria;
 -- Para contar as linhas da tabela categoria
 SELECT count(*) FROM categoria;
 
--- Jenni precisa criar interação com delete. 
+-- Para deletar alguma categoria
+
+DELETE FROM categoria
+WHERE cod_categoria = 13;

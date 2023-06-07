@@ -20,8 +20,8 @@ nome_categoria VARCHAR(30)
 -- Criar tabela Livros: 
 CREATE TABLE livros (
   cod_livro INT AUTO_INCREMENT PRIMARY KEY,
-  nome_livro VARCHAR(30),
-  autor_livro VARCHAR(30)
+  nome_livro VARCHAR(100),
+  autor_livro VARCHAR(100)
 );
 /* 
 Tabela associativa = existe para implementar uma relação n:n
