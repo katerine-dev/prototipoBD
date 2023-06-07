@@ -171,7 +171,6 @@ public class LivroView {
         String titulo = entrada.nextLine();
         System.out.println("Digite o nome do autor: ");
         String autor = entrada.nextLine();
-        entrada.nextLine();
         // precisa saber o tamanho do vetor
         System.out.println("Digite quantas categorias ele tem:");
         int tamanho = entrada.nextInt();
