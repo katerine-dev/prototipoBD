@@ -20,9 +20,10 @@ INSERT INTO categoria (nome_categoria) VALUES ('Romance'),
 -- Testes para interações com Java 
 -- Inserir mais informações 
 INSERT INTO categoria (nome_categoria) VALUES ('Infantil');
+INSERT INTO categoria (nome_categoria) VALUES ('Mitologia');
 
 -- Alterar informações
-UPDATE categoria SET nome_categoria = 'Suspense'
+UPDATE categoria SET nome_categoria = 'Romance'
  WHERE cod_categoria = 1;
 
 -- Visualizar

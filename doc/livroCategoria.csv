@@ -1,0 +1,29 @@
+cod_livro,nome_livro,autor_livro,cod_categoria,nome_categoria
+1,"Orgulho e Preconceito","Jane Austen",1,Romance
+1,"Orgulho e Preconceito","Jane Austen",2,Clássico
+2,1984,"George Orwell",1,Romance
+3,"Crime e Castigo","Fiódor Dostoiévski",1,Romance
+3,"Crime e Castigo","Fiódor Dostoiévski",4,"Ficção Psicológica"
+4,Hamlet,"William Shakespeare",5,Drama
+5,"Cem Anos de Solidão","Gabriel Márquez",1,Romance
+5,"Cem Anos de Solidão","Gabriel Márquez",6,"Realismo Mágico"
+6,"Anna Kariênina","Liev Tolstói",1,Romance
+6,"Anna Kariênina","Liev Tolstói",2,Clássico
+7,Odisseia,Homero,7,Epopeia
+7,Odisseia,Homero,14,Mitologia
+8,Fausto,"Johann Wolfgang Von Goethe",5,Drama
+9,"O Homem sem Qualidades ","Robert Musil",1,Romance
+9,"O Homem sem Qualidades ","Robert Musil",8,Modernista
+10,"O Homem sem Qualidades ","Robert Musil",1,Romance
+10,"O Homem sem Qualidades ","Robert Musil",8,Modernista
+11,"O estrangeiro","Albert Camus",1,Romance
+11,"O estrangeiro","Albert Camus",9,Existencialismo
+12,"As Mil e uma Noites","Antoine Gallang",10,Contos
+12,"As Mil e uma Noites","Antoine Gallang",11,"Literatura Árabe"
+13,"As Mil e uma Noites","Antoine Gallang",10,Contos
+13,"As Mil e uma Noites","Antoine Gallang",11,"Literatura Árabe"
+14,"Anna Kariênina","Liev Tolstói",10,Contos
+14,"Anna Kariênina","Liev Tolstói",11,"Literatura Árabe"
+15,"Os irmãos Karamazov","Fiódor Dostoiévski",1,Romance
+15,"Os irmãos Karamazov","Fiódor Dostoiévski",2,Clássico
+15,"Os irmãos Karamazov","Fiódor Dostoiévski",12,Filosófico

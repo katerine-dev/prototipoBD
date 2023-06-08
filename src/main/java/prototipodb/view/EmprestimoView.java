@@ -81,7 +81,6 @@ public class EmprestimoView {
                                             EmprestimoDb emprestimoDb) throws Exception {
         System.out.println("Digite o seu RA: ");
         String RA = entrada.nextLine();
-        entrada.nextLine();
         System.out.println("Digite o código do livro que você quer devolver: ");
         int codigoLivro = entrada.nextInt();
         emprestimoDb.devolverLivro(codigoLivro, RA);

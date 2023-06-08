@@ -91,6 +91,7 @@ public class MetodosInterfaceL {
                     break;
                 case 4:
                     System.out.println("Encerrando o programa.......");
+                    opcao = 0;
                     break;
                 default:
                     System.out.println("Opção inválida");
