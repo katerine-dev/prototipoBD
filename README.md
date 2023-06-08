@@ -69,6 +69,16 @@ O Sistema de Gerenciamento de Funcionários possui as seguintes funcionalidades 
 4. Database: 
 - Permite uma conexão com o banco de dados MySQL: `Database()`.
 
+### Criação da interface
+
+Para visualização do sistema da biblioteca escolhemos fazer a interface por meio do terminal.
+Foi separado toda a lógica de funcionamento das opções possíveis de interação com o usuário por métodos.
+
+Construídos em classes:
+
+- MetodosInterfaceB: interações da Bibliotecária no sistema
+- MetodosInterfaceL: interações do Leito no sistema
+
 ### Uso
 
 - Exemplo de chamada: (Criando um novo cadastro para Leitor)
@@ -94,10 +104,7 @@ e facilitar a manutenção e extensibilidade do código.
 - model
 - view
 
-Existe uma pasta `doc` (contendo os objetivos do trabalho e esse mesmo relatório em .txt) e uma pasta
-`sql` (contendo todos os scripts relacionados ao banco de dados).
+Existe uma pasta `doc` (contendo os objetivos do trabalho, todoas as tabelas geradas para teste em csv
+e esse mesmo relatório em .txt) e uma pasta `sql` (contendo todos os scripts relacionados ao banco de dados).
 
-Para utilizar do sistema compile o arquivo `Main`. 
-
-
-
+Para utilizar do sistema compile o arquivo `Main`.

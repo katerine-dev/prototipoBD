@@ -70,6 +70,16 @@ O Sistema de Gerenciamento de Funcionários possui as seguintes funcionalidades 
 4. Database: 
 - Permite uma conexão com o banco de dados MySQL: `Database()`.
 
+Criação da interface
+
+Para visualização do sistema da biblioteca escolhemos fazer a interface por meio do terminal.
+Foi separado toda a lógica de funcionamento das opções possíveis de interação com o usuário por métodos.
+
+Construídos em classes: 
+
+- MetodosInterfaceB: interações da Bibliotecária no sistema
+- MetodosInterfaceL: interações do Leito no sistema
+
 Uso
 
 - Exemplo de chamada: (Criando um novo cadastro para Leitor)
