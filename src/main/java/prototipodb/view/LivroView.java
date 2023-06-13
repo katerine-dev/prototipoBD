@@ -121,6 +121,7 @@ public class LivroView {
 
             opcao = entrada.nextInt();
 
+
             switch (opcao) {
                 // PRIMEIRA OPÇÃO VISUALIZAR LIVROS
                 case 1:
@@ -189,10 +190,11 @@ public class LivroView {
         // Alterar informações de um livro existente
         System.out.println("Digite o código do livro que deseja alterar: ");
         int codigoLivro = entrada.nextInt();
+        entrada.nextLine();
         System.out.println("Digite o novo nome do livro: ");
-        String novoTitulo = entrada.next();
+        String novoTitulo = entrada.nextLine();
         System.out.println("Digite o novo nome do autor: ");
-        String novoAutor = entrada.next();
+        String novoAutor = entrada.nextLine();
         livroDb.alterarLivro(codigoLivro, novoTitulo, novoAutor);
     }
 
