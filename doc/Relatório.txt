@@ -109,4 +109,13 @@ Existe uma pasta `doc` (contendo os objetivos do trabalho e esse mesmo relatóri
 
 Para utilizar do sistema compile o arquivo `Main`. 
 
+PARTICIPANTES:
+Eduarda Tobias Fernandes - RA: 12522216514;
+Jennifer Reis Sicherolli De Souza - RA: 125221110547;
+Katerine Linda Witkoski - RA: 12523131635;
+Nathalie Mori Taylor Zampieri - RA: 1252224816;
+Sérgio Silva Santos -  RA: 12522221107;
+Thifany Duarte Dos Santos - RA: 12522211469.
+
+Link do github: https://github.com/katerine-dev/prototipoBD
 
