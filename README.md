@@ -25,7 +25,7 @@ Foram utilizadas as seguintes tecnologias e ferramentas no desenvolvimento do si
 - livrosCategoria (realizando um join entre as tabelas livros e categorias. 
 Informações sobre 'cod_livro' e 'cod_categoria')
 - Leitor (contendo informações sobre 'nome_leitor'; 'ra_leitor', 'email_leitor')
-- leiorEmprestimo (contendo informações histórico de aludado/devolvido
+- leiorEmprestimo (contendo informações histórico de alugado/devolvido
 sobre 'codigo_livro'; 'status_livro'; 'ra_leitor')
 - Bibliotecaria (contendo informações sobre 'nome_bibliotecaria'; 'cpf_bibliotecaria'; 'email_bibliotecaria')
 
@@ -33,8 +33,8 @@ sobre 'codigo_livro'; 'status_livro'; 'ra_leitor')
 #### Definições das classes: 
 
 - Usuário (classe pai, contendo informações de nome e email das partes) - Herança
-- Leitor (classe filha, contendo informações da classe pai e um atributo excluivo "RA")
-- Bibliotecária (classe filha, contendo informações da classe pai e um atributo excluivo "CPF")
+- Leitor (classe filha, contendo informações da classe pai e um atributo exclusivo "RA")
+- Bibliotecária (classe filha, contendo informações da classe pai e um atributo exclusivo "CPF")
 - Categoria (Como existe uma relação n:n com livros decidimos criar uma classe para categorias)
 - Empréstimo (Contendo a lógica de `reservar()` e `devolver()` para os livros)
 - Livro (contendo toda a parte de gestão dos livros)
@@ -57,7 +57,7 @@ O Sistema de Gerenciamento de Funcionários possui as seguintes funcionalidades 
 - Permite cadastrar um novo livro: `criarLivro()`.
 - Permite alterar cadastro de um livro: `alterarLivro()`.
 - Permite deletar livro caso esteja danificado: `deletarLivro()`.
-- Permite visualizar todas os livros em uma tabela no terminal: `lerLivros()` e `mostrarLivros()`.
+- Permite visualizar todos os livros em uma tabela no terminal: `lerLivros()` e `mostrarLivros()`.
 - Permite filtrar busca de usuário por título de livro: `filtroLivrosTitulo()` e `mostrarFiltroPorTítulo()`.
 - Permite filtrar busca de usuário por categoria: `filtroLivrosCategoria()` e `mostrarFiltroPorCategoria()`.
 
@@ -104,7 +104,7 @@ e facilitar a manutenção e extensibilidade do código.
 - model
 - view
 
-Existe uma pasta `doc` (contendo os objetivos do trabalho, todoas as tabelas geradas para teste em csv
-e esse mesmo relatório em .txt) e uma pasta `sql` (contendo todos os scripts relacionados ao banco de dados).
+Existe uma pasta `doc` (contendo os objetivos do trabalho, todas as tabelas geradas para teste em csv
+e esse mesmo relatório em .pdf) e uma pasta `sql` (contendo todos os scripts relacionados ao banco de dados).
 
 Para utilizar do sistema compile o arquivo `Main`.
